@@ -1,0 +1,27 @@
+author = "TheAmazingAussie";
+
+class Header
+{
+	gameType = Sandbox;
+	minPlayers = 1;
+	maxPlayers = 100;
+};
+
+respawn = "BASE";
+respawnDelay = 10;
+respawnDialog = 0;
+onLoadMission= "Outbreak Chernarus";
+OnLoadIntro = "Welcome to Outbreak"; 
+OnLoadIntroTime = False;
+OnLoadMissionTime = False;
+onLoadName = "Outbreak Mod";
+disabledAI = 1;
+scriptedPlayer = 1;
+disableChannels[]={0,2,6};
+enableItemsDropping = 0;
+briefing = 0;
+debriefing = 0;
+enableDebugConsole = 0;
+joinUnassigned = 0;
+respawnOnStart = 0;
+forceRotorLibSimulation = 0;
