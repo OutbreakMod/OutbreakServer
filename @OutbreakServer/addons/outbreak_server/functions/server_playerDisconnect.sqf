@@ -23,8 +23,14 @@ if (!isNil '_unit') then {
 	_position = (getPosATL _unit);
 	_inventory = (_unit call player_serializeInventory);
 	
+	_legFracture = 0;
+		
+	if (_unit getVariable ["leg_break", false]) then {
+		_legFracture = 1;
+	};
+	
 	// save to hive
-	[_unit] call player_hiveSync;
+	 [_unit, name _unit, _position, _inventory, _legFracture, _unit getVariable ["health", 6000], _unit getVariable ["blood", 6000]] call server_clientSave;
 
 	// remove other unit
 	deleteVehicle (_unit);

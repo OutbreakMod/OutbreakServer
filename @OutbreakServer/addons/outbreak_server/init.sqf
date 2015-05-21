@@ -34,6 +34,11 @@ server_playerDisconnect = compile preProcessFileLineNumbers "addons\outbreak_ser
 // inserts
 hive_newUser = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_newUser.sqf";
 
+// ai
+zombie_ai = compile preProcessFileLineNumbers "addons\outbreak_server\functions\zombie_ai.sqf";
+fnc_infectedContact = compile preProcessFileLineNumbers "addons\outbreak_server\functions\fnc\fnc_infectedContact.sqf";
+fnc_infectedNextSound = compile preProcessFileLineNumbers "addons\outbreak_server\functions\fnc\fnc_infectedNextSound.sqf";
+
 // player
 player_clearInventory = compile preProcessFileLineNumbers "addons\outbreak_code\functions\player_clearInventory.sqf";
 player_loadInventory = compile preProcessFileLineNumbers "addons\outbreak_code\functions\player_loadInventory.sqf";
@@ -44,6 +49,11 @@ player_hiveSync = compile preProcessFileLineNumbers "addons\outbreak_code\functi
 // loot stuff
 building_items = compile preProcessFileLineNumbers "addons\outbreak_code\functions\building_items.sqf";
 loot_holder = compile preProcessFileLineNumbers "addons\outbreak_code\functions\loot_holder.sqf";
+
+// ai
+zombie_ai = compile preProcessFileLineNumbers "addons\outbreak_code\functions\zombie_ai.sqf";
+fnc_infectedContact = compile preProcessFileLineNumbers "addons\outbreak_code\functions\fnc\fnc_infectedContact.sqf";
+fnc_infectedNextSound = compile preProcessFileLineNumbers "addons\outbreak_code\functions\fnc\fnc_infectedNextSound.sqf";
 
 // disconnect handler
 onPlayerDisconnected {[_uid,_name] spawn server_playerDisconnect;};

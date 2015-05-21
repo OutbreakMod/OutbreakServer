@@ -78,4 +78,6 @@ for "_i" from 0 to (count _objects) - 1 do {
 	
 	_itemInventory = _obj select 4;
 	
+	[_veh, _itemInventory] call server_objectAddInventory;
+	
 };

@@ -3,8 +3,14 @@
 	@author: TheAmazingAussie
 */
 
-// Sets civilians hostile towards blufor
+// Make AI Hostile to Survivors
+WEST setFriend [EAST,0];
+EAST setFriend [WEST,0];
 
+// Make AI Hostile to Zeds
+EAST setFriend [CIVILIAN,0];
+CIVILIAN setFriend [EAST,0];
+	
 "hive_playerLogin" addPublicVariableEventHandler {
 
 	_packet = _this select 1;
@@ -49,24 +55,18 @@
 	_packet = _this select 1;
 	_pos = _packet select 0;
 
-	_animalRadius = 5;
-	_minimumSpawnRadius = 20;
-	_maximumSpawnRadius = 30;
+	_group = createGroup east;
 	
-	_animalAgents = ["Sheep_random_F"];
+	_infectedRadius = 10;
+	_minimumSpawnRadius = 60;
+	_maximumSpawnRadius = 150;
 	
-//	_nearAnimals = _pos nearEntities [_animalAgents, _maximumSpawnRadius];
-//
-//	if ((count _nearAnimals) < _animalRadius) then {
-//		
-//		_animalsToSpawn = _animalRadius - (count _nearAnimals);	
-//		
-//		for "_i" from 1 to (_animalsToSpawn) do { 
-//			_animalType = _animalAgents call BIS_fnc_selectRandom;
-//			diag_log format["Animal spawn request %1 -- %2 -- %3", _maximumSpawnRadius, _maximumSpawnRadius, _animalType];
-//			[_maximumSpawnRadius, _minimumSpawnRadius, _animalType, _pos] spawn player_spawnAnimal;
-//		};
-//	};
+	_nearInfected = _pos nearEntities ["Man", _maximumSpawnRadius];
+
+	if ((count _nearInfected) < _infectedRadius) then {
+		
+
+	};
 };
 
 

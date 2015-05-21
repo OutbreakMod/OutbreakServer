@@ -43,5 +43,5 @@ if (_name != "Error: No unit") then {
 	_update = format["UpdateObject, '%1','%2'", _id, _itemInventory];
 	[_update] call hive_static;
 	
-} forEach nearestObjects [_position, ["Car", "Helicopter", "Motorcycle", "Ship", "OutbreakShackV1", "OutbreakShackV2", "OutbreakShackV3", "OutbreakShackV4"], 100];
+} forEach nearestObjects [_position, ["Car", "Helicopter", "Motorcycle", "Ship", "OutbreakShackV1", "OutbreakShackV2", "OutbreakShackV3", "OutbreakShackV4", "OutbreakTent"], 100];
 		
