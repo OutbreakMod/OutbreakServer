@@ -5,26 +5,6 @@
 
 private ["_dynamicEvents", "_timeSettings", "_objects", "_setting", "_position", "_dir", "_veh", "_i"];
 
-/////////////////////////////////
-///  Dynamic events functions ///
-/////////////////////////////////
-
-// crash site configuration - per server restart
-_dynamicEvents = [
-	["helicopter_crash_site", 3]
-];
-
-// spawn dynamic events
-{
-	_event = _x select 0;
-	_count = _x select 1;
-	
-	for "_i" from 0 to (_count) - 1 do { 
-		[_event] call server_spawnDynamicEvent;
-	};
-	
-} foreach _dynamicEvents;
-
 ////////////////////////////
 ///  Time sync functions ///
 ////////////////////////////
@@ -58,6 +38,8 @@ diag_log format["TIME SYNC: Time type: %1 with setting: %2", _timeSetting, _valu
 ///   World Storage Objs ///
 ////////////////////////////
 
+diag_log "SERVER: Running world storage objects";
+
 _objects = ["GetUserStorage"] call hive_static;
 _objects = call compile(format["%1", _objects]);
 
@@ -75,9 +57,21 @@ for "_i" from 0 to (count _objects) - 1 do {
 	_veh setVectorDir (_worldspace select 1);
 	_veh setVectorUp (_worldspace select 2);
 	_veh setVariable ["ObjectID", _obj select 0, true];
-	
-	_itemInventory = _obj select 4;
-	
-	[_veh, _itemInventory] call server_objectAddInventory;
+
+	// add items from db into object
+	[_veh, (_obj select 4)] call server_objectAddInventory;
 	
 };
+
+////////////////////
+///   Scheduler  ///
+////////////////////
+
+diag_log "SERVER: Running scheduler";
+
+_scheduler = [
+	[false, 1, "spawn_us_crashsite"],
+	[false, 1, "spawn_ru_crashsite"]
+];
+
+[_scheduler] execVM "addons\outbreak_server\scheduler\scheduler_init.sqf";

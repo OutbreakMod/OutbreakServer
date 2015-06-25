@@ -17,7 +17,6 @@ _wrecks = [
 ];
 
 {
-	
 	_townPos = locationPosition _x;
 	_roads = _townPos nearRoads 400;
 	

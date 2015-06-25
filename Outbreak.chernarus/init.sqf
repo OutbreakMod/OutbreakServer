@@ -14,7 +14,7 @@ if (isServer) then {
 	};
 	
 	// dynamic weather
-	//[] execVM "real_weather.sqf";
+	[] execVM "real_weather.sqf";
 };
 
 if (isDedicated) exitWith {}; // CLIENT ONLY BELOW THIS LINE
