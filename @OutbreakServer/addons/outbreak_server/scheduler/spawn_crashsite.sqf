@@ -14,11 +14,12 @@ _minLootRadius = 3;
 
 _fire = true;
 
-_crashModels = ["MOD_Mi8Wreck", "Mi8Wreck"];	
+_crashModels = ["MOD_Mi8Wreck", "Mi8Wreck", "MOD_UH1YWreck", "Land_Wreck_Heli_Attack_02_F"];
 _model = _crashModels call BIS_fnc_selectRandom;
 
 // find heli crash site model
 _lootTable = configFile >> "CfgBuildingType" >> _model;
+_heightAdjustment = getNumber(configFile >> "CfgVehicles" >> _model >> "heightAdjustment");
 
 _needsrelocated = true;
 _position = [];
@@ -35,8 +36,12 @@ _crash = createVehicle [_model, _position, [], 0, "CAN_COLLIDE"];
 _crash setDir (random 360);
 _crash enableSimulation false;
 
+_newPos = _crash modelToWorld [0,0,0];
+_newPos set [2, _heightAdjustment]; // height adjustment
+_crash setPos _newPos;
+
 if (_model != "Mi8Wreck") then {
-	_fireEffect = createVehicle ["test_EmptyObjectForSmoke", _position, [], 0, "CAN_COLLIDE"];
+	_fireEffect = createVehicle ["test_EmptyObjectForSmoke", _newPos, [], 0, "CAN_COLLIDE"];
 	_fireEffect setDir (random 360);
 };
 

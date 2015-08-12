@@ -9,11 +9,10 @@ waitUntil{!isNil "BIS_fnc_selectRandom"};
 
 diag_log "SERVER INIT: Outbreak Mod";
 
-// variables
+// run variables
 [] execVM "addons\outbreak_server\variables.sqf";
 
-// compiles
-[] execVM "addons\outbreak_server\compiles.sqf";
+call compile preprocessFileLineNumbers "addons\outbreak_server\compiles.sqf";
 
 // run server
 [] execVM "addons\outbreak_server\init\server_init.sqf";

@@ -60,7 +60,6 @@ while {alive _zombie} do {
 		
 		if (_zombie distance _lockedTarget < 2 && alive _lockedTarget) then {
 			_zombie switchMove "AwopPercMstpSgthWnonDnon_end";
-			[_zombie, ["hint", "attacked"]] call server_clientCommand;
 			
 			//_lockedTarget setDamage (damage _lockedTarget + 0.34);
 			//[_zombie, "punch"] call fnc_infectedNextSound;
