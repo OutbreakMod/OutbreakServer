@@ -25,10 +25,10 @@ call compile preprocessFileLineNumbers "addons\outbreak_code\init.sqf";
 
 // called when a fresh player has spawned, for starting gear
 player_missionSpawn = {
-
-	// add default spawn items
 	player addWeapon "ItemMap";
-	player addVest "V_BandollierB_blk";
+	
+	_clothes = getArray (configFile >> "CfgZombies" >> "CfgClothes" >> "civilian");
+	player addUniform (_clothes call BIS_fnc_selectRandom);	
 };
 
 // called when a player logs in (called after missionSpawn if new character)
