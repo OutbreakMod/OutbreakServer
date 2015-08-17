@@ -50,34 +50,10 @@ CIVILIAN setFriend [EAST,0];
 	_player addPrimaryWeaponItem "acc_flashlight";
 };
 
-"player_agentsSpawnCheck" addPublicVariableEventHandler {
-
-	_packet = _this select 1;
-	_pos = _packet select 0;
-
-	_group = createGroup east;
-	
-	_infectedRadius = 10;
-	_minimumSpawnRadius = 60;
-	_maximumSpawnRadius = 150;
-	
-	_nearInfected = _pos nearEntities ["Man", _maximumSpawnRadius];
-
-	if ((count _nearInfected) < _infectedRadius) then {
-		
-
-	};
-};
-
-
-//[91,34,34,44,34,34,44,34,34,44,60,110,117,108,108,62,44,34,34,44,60,110,117,108,108,62,44,34,34,44,60,110,117,108,108,62,44,34,34,44,60,110,117,108,108,62,44,91,93,44,34,34,44,60,110,117,108,108,62,44,91,93,44,34,34,44,60,110,117,108,108,62,44,91,93,44,60,110,117,108,108,62,93]
-
 "hive_playerSave" addPublicVariableEventHandler {
 
 	_packet = _this select 1;
 	_packet spawn server_clientSave;
-	
-	//diag_log format["Process save for: %1 - %2", getPlayerUID _player, name _player];
 };
 
 "hive_playerDelete" addPublicVariableEventHandler {
@@ -106,35 +82,20 @@ CIVILIAN setFriend [EAST,0];
 	_packet = _this select 1;
 	
 	_player = _packet select 0;
-	_class = _packet select 1;
-	
-	_worldspace = _packet select 2;
-	_dir = _packet select 3;
+	_vehicle = _packet select 1;
+	_class = _packet select 2;
+	_worldspace = _packet select 3;
+	_dir = _packet select 4;
+	_hitPoints = _packet select 5;
+	_fuel = fuel _vehicle;
+	_damage = damage _vehicle;
 	
 	_inventory = [];
 	
-	_update = format["NewObject, '%1','%2','%3','%4'", _class, _worldspace, _dir, _inventory];
-	diag_log _update;
-	
+	_update = format["NewObject, '%1','%2','%3','%4','%5','%6','%7'", _class, _worldspace, _dir, _inventory, _hitPoints, _fuel, _damage];
 	_response = [_update] call hive_static;
-	diag_log format ["response: %1", _response];
+	
+	diag_log format ["hive_newObject response: %1", _response];
 	
 	_vehicle setVariable ["ObjectID", parseNumber(_response), true]
-};
-
-"hive_updateObject" addPublicVariableEventHandler {
-
-	_packet = _this select 1;
-	
-	_player = _packet select 0;
-	_vehicle = _packet select 1;
-	_id = _vehicle getVariable ["ObjectID", 0];
-	_inventory = [];
-	
-	// public string NewObject(String clazz, String position, String dir, String inventory)
-	
-	if (_id == 0) exitWith { diag_log format["Saving object failed, no object ID"]; };
-	
-	_update = format["UpdateObject, '%1','%2'", _id, _inventory];
-	[_update] call hive_static;
 };

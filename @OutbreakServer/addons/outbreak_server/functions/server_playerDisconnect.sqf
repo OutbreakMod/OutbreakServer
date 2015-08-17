@@ -35,6 +35,21 @@ if (!isNil '_unit') then {
 	// remove other unit
 	deleteVehicle (_unit);
 	
+	////////////////
+	// DELETE ZEDS
+	////////////////
+	
+	// find near zombies
+	_near = [_position, 200, "isZombie"] call player_findNearby;
+
+	// delete all things
+	{
+		if (alive _x) then {
+			deleteVehicle _x;
+		};
+		
+	} forEach _near;
+	
 	/////
 	// ANTI-LOGGER NPC
 	/////

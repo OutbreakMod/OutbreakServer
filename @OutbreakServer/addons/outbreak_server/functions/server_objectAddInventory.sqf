@@ -8,6 +8,8 @@ private ["_veh", "_itemInventory", "_weaponCargo", "_weaponCargoCount", "_weapon
 _veh = _this select 0;
 _itemInventory = _this select 1;
 
+if (count _itemInventory < 1) exitWith {};
+
 _weaponCargo = _itemInventory select 0;
 _weaponCargoItems = _weaponCargo select 0;
 _weaponCargoCount = _weaponCargo select 1;

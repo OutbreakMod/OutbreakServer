@@ -3,7 +3,7 @@
 	@author: TheAmazingAussie
 */
 
-private ["_dynamicEvents", "_timeSettings", "_objects", "_setting", "_position", "_dir", "_veh", "_i"];
+private ["_dynamicEvents", "_timeSettings", "_objects", "_setting", "_position", "_dir", "_veh", "_i", "_spawns", "_class", "_position", "_objectSpawns"];
 
 ////////////////////////////
 ///  Time sync functions ///
@@ -35,13 +35,81 @@ if (_timeSetting == "Static") then {
 diag_log format["TIME SYNC: Time type: %1 with setting: %2", _timeSetting, _value];
 
 ////////////////////////////
+///   Vehicle Spawn Objs ///
+////////////////////////////
+
+_objects = ["GetObjectStorage"] call hive_static;
+_objects = call compile(format["%1", _objects]);
+
+_objectSpawns = ["GetObjectSpawns"] call hive_static;
+_objectSpawns = call compile(format["%1", _objectSpawns]);
+
+waitUntil {!isNil "_objects"};
+waitUntil {!isNil "_objectSpawns"};
+
+sleep 0.5;
+
+if (count _objects < 1) then {
+
+	{
+		_class = _x select 1;
+		_position = _x select 2;
+		_dir = _x select 3;
+		
+		// create temp vehicle to simulate vectors
+		_veh = createVehicle [_class, _position, [], 0, "CAN_COLLIDE"];
+		_location = _veh modelToWorld [0,0,0];
+		
+		// TODO: Random vehicle dmg
+		
+		_type = typeOf _veh;
+		_hitPoints = (count (configFile >> "CfgVehicles" >> _type >> "HitPoints")) - 1;
+		_sections = [];
+
+		for "_i" from 0 to _hitPoints do {
+
+			_selected = (configFile >> "CfgVehicles" >> _type >> "HitPoints") select _i;
+			_selectedName = getText(_selected >> "name");
+			_sections = _sections + [_selectedName];
+		};
+		
+		_savedHitPoints = [];
+		
+		for "_i" from 0 to (count _sections) - 1 do { 
+		
+			_hitDamage = _veh getHit (_sections select _i);
+			_savedHitPoints = _savedHitPoints + [[(_sections select _i), _hitDamage]];	
+		};
+		
+		// create worldspace
+		_worldspace = [_location, vectorDir _veh, vectorUp _veh];
+		
+		_fuel = fuel _vehicle;
+		_damage = getDammage _vehicle;
+		
+		// insert into db
+		_update = format["NewObject, '%1','%2','%3','%4','%5','%6','%7'", _class, _worldspace, _dir, "", _savedHitPoints, _fuel, _damage];
+		_response = [_update] call hive_static;
+		
+		diag_log format ["hive_newObject response: %1", _response];
+
+		deleteVehicle (_veh);
+		
+	} forEach _objectSpawns;
+
+};
+
+////////////////////////////
 ///   World Storage Objs ///
 ////////////////////////////
 
 diag_log "SERVER: Running world storage objects";
 
-_objects = ["GetUserStorage"] call hive_static;
+_objects = ["GetObjectStorage"] call hive_static;
 _objects = call compile(format["%1", _objects]);
+
+waitUntil {!isNil "_objects"};
+sleep 0.5;
 
 for "_i" from 0 to (count _objects) - 1 do { 
 
@@ -60,6 +128,22 @@ for "_i" from 0 to (count _objects) - 1 do {
 
 	// add items from db into object
 	[_veh, (_obj select 4)] call server_objectAddInventory;
+	
+	_damage = _obj select 6;
+	_veh setDamage _damage;
+	
+	_fuel = _obj select 7;
+	_veh setFuel _fuel;
+	
+	_hitpoints = _obj select 5;
+	
+	{
+		_hit = _x select 0;
+		_dmg = _x select 1;
+		
+		_veh setHit [_hit, _dmg];
+		
+	} foreach _hitpoints;
 	
 };
 
