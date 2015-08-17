@@ -56,11 +56,9 @@ if (count _objects < 1) then {
 		_position = _x select 2;
 		_dir = _x select 3;
 		
-		// create temp vehicle to simulate vectors
 		_veh = createVehicle [_class, _position, [], 0, "CAN_COLLIDE"];
 		_location = _veh modelToWorld [0,0,0];
-		
-		// TODO: Random vehicle dmg
+		[_veh] call vehicle_damage;
 		
 		_type = typeOf _veh;
 		_hitPoints = (count (configFile >> "CfgVehicles" >> _type >> "HitPoints")) - 1;
@@ -84,8 +82,8 @@ if (count _objects < 1) then {
 		// create worldspace
 		_worldspace = [_location, vectorDir _veh, vectorUp _veh];
 		
-		_fuel = fuel _vehicle;
-		_damage = getDammage _vehicle;
+		_fuel = fuel _veh;
+		_damage = damage _veh;
 		
 		// insert into db
 		_update = format["NewObject, '%1','%2','%3','%4','%5','%6','%7'", _class, _worldspace, _dir, "", _savedHitPoints, _fuel, _damage];
@@ -129,10 +127,10 @@ for "_i" from 0 to (count _objects) - 1 do {
 	// add items from db into object
 	[_veh, (_obj select 4)] call server_objectAddInventory;
 	
-	_damage = _obj select 6;
+	_damage = _obj select 7;
 	_veh setDamage _damage;
 	
-	_fuel = _obj select 7;
+	_fuel = _obj select 6;
 	_veh setFuel _fuel;
 	
 	_hitpoints = _obj select 5;

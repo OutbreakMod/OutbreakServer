@@ -26,3 +26,6 @@ player_hiveSync = compile preProcessFileLineNumbers "addons\outbreak_code\functi
 // loot stuff
 building_items = compile preProcessFileLineNumbers "addons\outbreak_code\functions\building_items.sqf";
 loot_holder = compile preProcessFileLineNumbers "addons\outbreak_code\functions\loot_holder.sqf";
+
+// vehicles
+vehicle_damage = compile preProcessFileLineNumbers "addons\outbreak_server\functions\vehicle_damage.sqf";

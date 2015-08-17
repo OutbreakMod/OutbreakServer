@@ -64,7 +64,6 @@ CIVILIAN setFriend [EAST,0];
 	["users", "uuid", getPlayerUID _player] call hive_delete;
 };
 
-
 "player_createVehicle" addPublicVariableEventHandler {
 	
 	_packet = _this select 1;
