@@ -12,9 +12,6 @@ if (isServer) then {
 	if (OUTBREAK_EXTRA_BUILDINGS) then {
 		[] execVM format["addons\outbreak_code\extra_buildings\%1\init.sqf", toLower(OUTBREAK_MAP)];
 	};
-	
-	// dynamic weather
-	[] execVM "real_weather.sqf";
 };
 
 if (isDedicated) exitWith {}; // CLIENT ONLY BELOW THIS LINE
