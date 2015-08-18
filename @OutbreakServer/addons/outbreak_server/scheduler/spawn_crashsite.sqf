@@ -19,7 +19,11 @@ _model = _crashModels call BIS_fnc_selectRandom;
 
 // find heli crash site model
 _lootTable = configFile >> "CfgBuildingType" >> _model;
-_heightAdjustment = getNumber(configFile >> "CfgVehicles" >> _model >> "heightAdjustment");
+_heightAdjustment = 0;
+
+if (_model == "MOD_Mi8Wreck") then {
+	_heightAdjustment = 2;
+};
 
 _needsrelocated = true;
 _position = [];
