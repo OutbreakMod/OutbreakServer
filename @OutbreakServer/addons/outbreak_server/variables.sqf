@@ -91,7 +91,7 @@ CIVILIAN setFriend [EAST,0];
 	
 	_inventory = [];
 	
-	_update = format["NewObject, '%1','%2','%3','%4','%5','%6','%7'", _class, _worldspace, _dir, _inventory, _hitPoints, _fuel, _damage];
+	_update = format["NewObject, 'DEV001','%1','%2','%3','%4','%5','%6','%7'", _class, _worldspace, _dir, _inventory, _hitPoints, _fuel, _damage];
 	_response = [_update] call hive_static;
 	
 	diag_log format ["hive_newObject response: %1", _response];

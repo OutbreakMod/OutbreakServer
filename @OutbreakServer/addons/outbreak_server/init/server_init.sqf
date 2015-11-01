@@ -38,7 +38,7 @@ diag_log format["TIME SYNC: Time type: %1 with setting: %2", _timeSetting, _valu
 ///   Vehicle Spawn Objs ///
 ////////////////////////////
 
-_objects = ["GetObjectStorage"] call hive_static;
+_objects = ["GetObjectStorage, 'DEV001'"] call hive_static;
 _objects = call compile(format["%1", _objects]);
 
 _objectSpawns = ["GetObjectSpawns"] call hive_static;
@@ -86,7 +86,7 @@ if (count _objects < 1) then {
 		_damage = damage _veh;
 		
 		// insert into db
-		_update = format["NewObject, '%1','%2','%3','%4','%5','%6','%7'", _class, _worldspace, _dir, "", _savedHitPoints, _fuel, _damage];
+		_update = format["NewObject, 'DEV001','%1','%2','%3','%4','%5','%6','%7'", _class, _worldspace, _dir, "", _savedHitPoints, _fuel, _damage];
 		_response = [_update] call hive_static;
 		
 		diag_log format ["hive_newObject response: %1", _response];
@@ -103,7 +103,7 @@ if (count _objects < 1) then {
 
 diag_log "SERVER: Running world storage objects";
 
-_objects = ["GetObjectStorage"] call hive_static;
+_objects = ["GetObjectStorage, 'DEV001'"] call hive_static;
 _objects = call compile(format["%1", _objects]);
 
 waitUntil {!isNil "_objects"};

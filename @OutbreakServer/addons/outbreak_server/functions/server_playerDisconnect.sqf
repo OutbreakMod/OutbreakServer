@@ -30,8 +30,9 @@ if (!isNil '_unit') then {
 	};
 	
 	// save to hive
-	 [_unit, name _unit, _position, _inventory, _legFracture, _unit getVariable ["health", 6000], _unit getVariable ["blood", 6000]] call server_clientSave;
-
+	//[_unit, name _unit, _position, _inventory, _legFracture, _unit getVariable ["health", 6000], _unit getVariable ["blood", 6000]] call server_clientSave;
+	_unit call player_hiveSync;
+	
 	// remove other unit
 	deleteVehicle (_unit);
 	
@@ -40,7 +41,7 @@ if (!isNil '_unit') then {
 	////////////////
 	
 	// find near zombies
-	_near = [_position, 200, "isZombie"] call player_findNearby;
+	/*_near = [_position, 200, "isZombie"] call player_findNearby;
 
 	// delete all things
 	{
@@ -48,12 +49,12 @@ if (!isNil '_unit') then {
 			deleteVehicle _x;
 		};
 		
-	} forEach _near;
+	} forEach _near;*/
 	
 	/////
 	// ANTI-LOGGER NPC
 	/////
-	_combatNPC = (createGroup west) createUnit ["b_survivor_F", _position, [], 0, "CAN_COLLIDE"];
+	/*_combatNPC = (createGroup west) createUnit ["b_survivor_F", _position, [], 0, "CAN_COLLIDE"];
 	_combatNPC setVariable ["playeruuid", _uid];
 	_combatNPC call player_clearInventory;
 	
@@ -67,5 +68,5 @@ if (!isNil '_unit') then {
 		deleteVehicle (_combatNPC);
 	} else {
 		
-	};
+	};*/
 };
