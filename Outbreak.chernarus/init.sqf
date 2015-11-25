@@ -4,27 +4,7 @@ OUTBREAK_SPAWN_AREA = 1500;
 OUTBREAK_EXTRA_BUILDINGS = true;
 
 if (isServer) then {
-	
-	// init server
 	call compile preprocessFileLineNumbers "addons\outbreak_server\init.sqf";
-	
-	// add extra buildings, comment next line to disable
-	if (OUTBREAK_EXTRA_BUILDINGS) then {
-		diag_log format ["Adding extra buildings for: %1", toLower(OUTBREAK_MAP)];
-		[] execVM format["addons\outbreak_code\extra_buildings\%1\init.sqf", toLower(OUTBREAK_MAP)];
-	};
-	
-	//0 setOvercast 0.8;
-	
-	_chance = 0.8;
-	
-	86400 setOvercast _chance;
-	skipTime 24;
-
-	//to remain on the same date:
-	skipTime -24;
-	86400 setOvercast _chance;
-	skipTime 24;
 };
 
 if (isDedicated) exitWith {}; // CLIENT ONLY BELOW THIS LINE

@@ -23,9 +23,11 @@ player_loadInventory = compile preProcessFileLineNumbers "addons\outbreak_code\f
 player_serializeInventory = compile preProcessFileLineNumbers "addons\outbreak_code\functions\player_serializeInventory.sqf";
 player_hiveSync = compile preProcessFileLineNumbers "addons\outbreak_code\functions\player_hiveSync.sqf";
 
-// loot stuff
-building_items = compile preProcessFileLineNumbers "addons\outbreak_code\functions\building_items.sqf";
-loot_holder = compile preProcessFileLineNumbers "addons\outbreak_code\functions\loot_holder.sqf";
+// building
+building_items = compile preProcessFileLineNumbers "addons\outbreak_server\functions\building_items.sqf";
+building_spawnLoot = compile preProcessFileLineNumbers "addons\outbreak_server\functions\building_spawnLoot.sqf";
+loot_holder = compile preProcessFileLineNumbers "addons\outbreak_server\functions\loot_holder.sqf";
+
 
 // vehicles
 vehicle_damage = compile preProcessFileLineNumbers "addons\outbreak_server\functions\vehicle_damage.sqf";

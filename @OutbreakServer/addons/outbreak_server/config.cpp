@@ -6,3 +6,7 @@ class CfgPatches {
 		requiredAddons[] = {};
 	};
 };
+
+// building loot
+#include "config\cfgLoot\cfgBuildingType.hpp"
+#include "config\cfgLoot\cfgLootCategories.hpp"

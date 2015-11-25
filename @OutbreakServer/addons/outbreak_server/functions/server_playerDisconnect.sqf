@@ -31,7 +31,7 @@ if (!isNil '_unit') then {
 	
 	// save to hive
 	//[_unit, name _unit, _position, _inventory, _legFracture, _unit getVariable ["health", 6000], _unit getVariable ["blood", 6000]] call server_clientSave;
-	_unit call player_hiveSync;
+	[_unit] call player_hiveSync;
 	
 	// remove other unit
 	deleteVehicle (_unit);

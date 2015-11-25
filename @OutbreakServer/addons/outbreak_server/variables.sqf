@@ -10,6 +10,9 @@ EAST setFriend [WEST,0];
 // Make AI Hostile to Zeds
 EAST setFriend [CIVILIAN,0];
 CIVILIAN setFriend [EAST,0];
+
+// variables
+LOOT_TABLES = [];
 	
 "hive_playerLogin" addPublicVariableEventHandler {
 
@@ -46,8 +49,6 @@ CIVILIAN setFriend [EAST,0];
 		_player call hive_newUser;
 	
 	};
-	
-	_player addPrimaryWeaponItem "acc_flashlight";
 };
 
 "hive_playerSave" addPublicVariableEventHandler {
@@ -98,3 +99,42 @@ CIVILIAN setFriend [EAST,0];
 	
 	_vehicle setVariable ["ObjectID", parseNumber(_response), true]
 };
+
+"server_spawnLoot" addPublicVariableEventHandler {
+
+	_packet = _this select 1;
+	_building = _packet select 0;
+	
+	if (serverTime > _building getVariable ["loottimer", 0]) then {
+		_lootArray = _building getVariable ["lootarray", []];
+		
+		if ((typeOf _building) in ["MOD_Mi8Wreck", "Mi8Wreck", "MOD_UH1YWreck", "Land_Wreck_Heli_Attack_02_F"]) then {
+			if ((_building getVariable ["helicrashSpawnZeds", true])) then {
+			
+				_maxZeds = floor (random 6) + 2;
+				
+				for "_i" from 0 to _maxZeds - 1 do {
+
+					_spawnMinRadius = 5;
+					_spawnMaxRadius = 8;
+					
+					_zombiePosition = [(position _building), (random _spawnMaxRadius) + _spawnMinRadius, random 360] call BIS_fnc_relPos;
+					_agent = createAgent ["Zombie", _zombiePosition, [], 0, "NONE"];
+					[_agent] call fnc_startZombie;
+				};
+				
+				_building setVariable ["helicrashSpawnZeds", false, true];
+			};
+		} else {
+			
+			for "_i" from 0 to count (_lootArray) - 1 do {
+				deleteVehicle (_lootArray select _i);
+			};
+
+
+			_building setVariable ["lootarray", []];
+			_building call building_spawnLoot;
+		};
+	};
+};
+

@@ -5,6 +5,19 @@
 
 private ["_dynamicEvents", "_timeSettings", "_objects", "_setting", "_position", "_dir", "_veh", "_i", "_spawns", "_class", "_position", "_objectSpawns"];
 
+if (OUTBREAK_EXTRA_BUILDINGS) then {
+	diag_log format ["Adding extra buildings for: %1", toLower(OUTBREAK_MAP)];
+	[] execVM format["addons\outbreak_code\extra_buildings\%1\init.sqf", toLower(OUTBREAK_MAP)];
+};
+
+_chance = 0.6;
+
+86400 setOvercast _chance;
+skipTime 24;
+skipTime -24;
+86400 setOvercast _chance;
+skipTime 24;
+
 ////////////////////////////
 ///  Time sync functions ///
 ////////////////////////////
