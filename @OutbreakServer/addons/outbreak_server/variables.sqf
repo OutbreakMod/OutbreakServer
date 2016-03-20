@@ -33,6 +33,9 @@ LOOT_TABLES = [];
 		_inventory = toString (call compile(["users", "inventory", "uuid", _uuid] call hive_read));
 		[_player, ["gear", call compile(_inventory)]] call server_clientCommand;
 		
+		_goggles = ["users", "goggles", "uuid", _uuid] call hive_read;
+		[_player, ["goggles", _goggles]] call server_clientCommand;
+		
 		// medical
 		_medical = ["users", "medical", "uuid", _uuid] call hive_read;
 		[_player, ["medical", call compile(format["%1", _medical])]] call server_clientCommand;
