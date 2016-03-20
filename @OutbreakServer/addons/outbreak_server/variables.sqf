@@ -89,12 +89,11 @@ LOOT_TABLES = [];
 	_hitPoints = _packet select 5;
 	_fuel = fuel _vehicle;
 	_damage = damage _vehicle;
-	
 	_inventory = [];
 	
 	_update = format["NewObject, '%1','%2','%3','%4','%5','%6','%7','%8'", MOD_HIVE, _class, _worldspace, _dir, _inventory, _hitPoints, _fuel, _damage];
-	_response = [_update] call hive_static;
 	
+	_response = [_update] call hive_static;
 	diag_log format ["hive_newObject response: %1", _response];
 	
 	_vehicle setVariable ["ObjectID", parseNumber(_response), true]
