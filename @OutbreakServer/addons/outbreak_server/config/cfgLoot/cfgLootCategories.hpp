@@ -47,34 +47,33 @@ class CfgLootCategories {
 		
 		loot[] = {
 			{"tent","single",0.1}, // 10% 
-			{"arifle_mas_m4","gun",0.07}, // @mas
-			{"arifle_mas_hk417c","gun",0.06}, // @mas
-			{"arifle_mas_m16","gun",0.07}, // @mas
-			{"arifle_mas_fal","gun",0.05} // @mas
+			{"CUP_arifle_G36A_camo","gun",0.07},
+			{"CUP_arifle_FNFAL","gun",0.06},
+			{"CUP_arifle_M16A2","gun",0.07},
+			{"CUP_srifle_M14_DMR_LeupoldMk4","gun",0.05}
 		};
 	};
 	
 	class RUHelicrash {
 		
 		loot[] = {
-			{"arifle_mas_asval_h","gun",0.04}, // 10% 
-			{"LMG_mas_rpk_F","gun",0.08}, // @mas
-			{"LMG_mas_pkm_F","gun",0.07}, // @mas
-			{"srifle_mas_vss_h","gun",0.03} // @mas
+			{"CUP_arifle_RPK74","gun",0.08}, // @mas
+			{"CUP_lmg_PKM","gun",0.07}, // @mas
+			{"CUP_srifle_VSSVintorez_pso","gun",0.03} // @mas
 		};
 	};
 	
 	class Attachments {
 		
 		loot[] = {
-			{"optic_mas_acog_eo", "item",0.01},
-			{"optic_ACO", "item",0.01},
-			{"optic_mas_Holosight_blk", "item",0.01},
-			{"muzzle_mas_snds_M", "item",0.01},
-			{"optic_mas_kobra", "item",0.01},
-			{"muzzle_mas_snds_AK", "item",0.01},
-			{"optic_mas_PSO_eo", "item",0.01},
-			{"optic_mas_acog_eo","item",0.01}
+			{"CUP_optic_Kobra", "item",0.01},
+			{"CUP_optic_PSO_1", "item",0.01},
+			{"CUP_optic_GOSHAWK", "item",0.01},
+			{"CUP_optic_NSPU","item",0.01},
+			{"optic_Holosight","item",0.01},
+			{"optic_Aco","item",0.01},
+			{"optic_MRCO","item",0.01},
+			{"CUP_optic_ACOG","item",0.01}
 		};
 	};
 
@@ -87,21 +86,24 @@ class CfgLootCategories {
 			//{"arifle_MX_Holo_pointer_F","gun",0.07},
 			//{"arifle_MXM_RCO_pointer_snds_F","gun",0.03},
 			//{"arifle_Katiba_F","gun",0.08}
-			{"arifle_mas_ak_74m","gun",0.06},
-			{"arifle_mas_aks74","gun",0.07},
-			{"arifle_mas_ak74","gun",0.06},
-			{"arifle_mas_akm","gun",0.05},
-			{"arifle_mas_m14_a","gun",0.03}
+			{"CUP_arifle_AK74M","gun",0.03},
+			{"CUP_arifle_AKS74U","gun",0.05},
+			{"CUP_arifle_AK74","gun",0.07},
+			{"CUP_arifle_AKM","gun",0.03},
+			{"CUP_arifle_RPK74","gun",0.04},
+			{"CUP_arifle_CZ805_A2","gun",0.01},
+			{"CUP_arifle_Sa58P","gun",0.03}
 		};
 	};
 	
 	class SubmachineGuns {
 		
 		loot[] = {
-			{"hgun_PDW2000_Holo_F","gun",0.03},
-			{"SMG_01_Holo_F","gun",0.03},
-			{"hgun_mas_sa61_F","gun",0.05},
-			{"arifle_mas_bizon","gun",0.04}// @mas
+			{"CUP_hgun_MicroUzi","gun",0.03},
+			{"CUP_hgun_MicroUzi_snds","gun",0.01},
+			{"CUP_smg_MP5A5","gun",0.02},
+			{"CUP_smg_MP5SD6","gun",0.01},
+			{"CUP_smg_bizon","gun",0.05}
 			
 		};
 	};
@@ -110,7 +112,7 @@ class CfgLootCategories {
 		
 		loot[] = {
 			{"hgun_PDW2000_Holo_F","gun",0.06},
-			{"LMG_mas_pkm_F","gun",0.03}
+			{"CUP_lmg_PKM","gun",0.03}
 			
 		};
 	};
@@ -118,15 +120,17 @@ class CfgLootCategories {
 	class SniperRifles {
 		
 		loot[] = {
-			{"srifle_mas_svd_h","gun",0.02},
-			{"srifle_mas_ksvk_h","gun",0.01},
+			{"CUP_srifle_SVD_pso","gun",0.02},
+			{"CUP_srifle_ksvk_PSO3","gun",0.01},
 		};
 	};
 	
 	class HighCaliberRifles {
 		
 		loot[] = {
-			{"srifle_mas_m107_h","gun",0.01} // @mas m107
+			{"CUP_srifle_AS50_SBPMII","gun",0.01},
+			{"CUP_srifle_G22_des_SBPMII","gun",0.02},
+			{"CUP_srifle_M107_LeupoldVX3","gun",0.01}
 		};
 	};
 	
@@ -202,17 +206,16 @@ class CfgLootCategories {
 	class Hunting {
 		
 		loot[] = {
-			{"srifle_mas_m24_v_h","gun",0.02}, //@mas
-			{"Trixie_CZ550", "gun",0.04}
+			{"CUP_srifle_CZ750_SOS_bipod","gun",0.01}, //@mas
+			{"CUP_srifle_CZ550", "gun",0.04}
 		};
 	};
 	
 	class Farm {
 		
 		loot[] = {
-			{"Trixie_Enfield", "gun",0.08},
-			{"Trixie_CZ550", "gun",0.03},
-			{"arifle_mas_saiga","gun",0.06},
+			{"CUP_srifle_CZ550", "gun",0.03},
+			{"CUP_sgun_Saiga12K","gun",0.06},
 			{"WoodPileBox","supplybox",0.1}, //0.1
 			{"carrot", "item",0.05},
 			{"potato", "item",0.05}
@@ -260,12 +263,11 @@ class CfgLootCategories {
 	class Magazines {
 		
 		loot[] = {
-			{"20Rnd_mas_762x51_Stanag", "magazine",0.02},
-			{"5Rnd_127x108_Mag", "magazine",0.04},
-			{"10Rnd_mas_762x54_mag","magazine",0.02}, // @mas
-			{"5Rnd_mas_762x51_Stanag","magazine",0.03}, // @mas
-			{"30Rnd_mas_762x39_mag", "magazine",0.05}, // @mas
-			{"30Rnd_mas_545x39_mag", "magazine",0.06} // @mas	
+			{"CUP_30Rnd_556x45_Stanag", "magazine",0.02},
+			{"CUP_20Rnd_762x51_FNFAL_M", "magazine",0.04},
+			{"CUP_10Rnd_127x99_m107","magazine",0.02}, // @mas
+			{"CUP_30Rnd_762x39_AK47_M", "magazine",0.05}, // @mas
+			{"CUP_30Rnd_545x39_AK_M", "magazine",0.06} // @mas	
 			
 		};
 	};
@@ -273,8 +275,9 @@ class CfgLootCategories {
 	class CivillianPistols {
 		
 		loot[] = {
-			{"hgun_mas_mak_F","gun",0.06}, // @mas makarov
-			{"hgun_mas_grach_F", "gun",0.04} // @mas russian mil pistol
+			{"CUP_hgun_Colt1911","gun",0.04}, // @mas makarov
+			{"CUP_hgun_TaurusTracker455", "gun",0.05},
+			{"CUP_hgun_Makarov", "gun",0.06}			// @mas russian mil pistol
 		};
 	};
 
@@ -282,10 +285,9 @@ class CfgLootCategories {
 	class CivillianMagazines {
 		
 		loot[] = {
-			{"Trixie_CZ550_Mag","magazine",0.02},
-			{"Trixie_Enfield_Mag","magazine",0.03},
-			{"8Rnd_mas_9x18_Mag","magazine",0.05},
-			{"15Rnd_mas_9x21_Mag","magazine",0.04}
+			{"CUP_6Rnd_45ACP_M","magazine",0.04}, // @mas
+			{"CUP_7Rnd_45ACP_1911","magazine",0.04},
+			{"CUP_8Rnd_9x18_Makarov_M","magazine",0.05}// @mas
 		};
 	};
 };

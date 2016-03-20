@@ -165,7 +165,9 @@ for "_i" from 0 to (count _objects) - 1 do {
 diag_log "SERVER: Running scheduler";
 
 _scheduler = [
-	[false, 80, "spawn_crashsite"]
+	[false, 2, "spawn_crashsite"]
 ];
 
 [_scheduler] execVM "addons\outbreak_server\scheduler\scheduler_init.sqf";
+
+diag_log "Server successfully started!";
