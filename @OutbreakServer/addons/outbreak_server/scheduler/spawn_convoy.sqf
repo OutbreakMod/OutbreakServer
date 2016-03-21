@@ -14,23 +14,24 @@ _minLootRadius = 3;
 
 _fire = true;
 
-_crashModels = ["MOD_Mi8Wreck", "Mi8Wreck", "MOD_UH1YWreck", "Land_Wreck_Heli_Attack_02_F"];
+_crashModels = ["Land_Wreck_Van_F"];
 _model = _crashModels call BIS_fnc_selectRandom;
 
 // find heli crash site model
-_lootTable = configFile >> "CfgBuildingType" >> _model;
-_heightAdjustment = 0;
+_lootTable = configFile >> "CfgBuildingType" >> "MOD_UH1YWreck";
 
-if (_model == "MOD_Mi8Wreck") then {
-	_heightAdjustment = 2;
-};
 
 _needsrelocated = true;
 _position = [];
 
 while {_needsrelocated} do {
-	_position = [getMarkerPos "center", 0, 7000, 10, 0, 2000,0] call BIS_fnc_findSafePos;
-	_istoomany = _position nearObjects ["AllVehicles", 5];
+	
+	_position = RoadList call BIS_fnc_selectRandom;
+	_position = _position modelToWorld [0,0,0];
+	_position = [_position,5,20,5,0,2000,0] call BIS_fnc_findSafePos;
+	
+	_istoomany = _position nearObjects ["All", 5];
+	
 	if (count _istoomany == 0) then { 
 		_needsrelocated = false; 
 	};
@@ -41,7 +42,6 @@ _crash setDir (random 360);
 _crash enableSimulation false;
 
 _newPos = _crash modelToWorld [0,0,0];
-_newPos set [2, _heightAdjustment]; // height adjustment
 _crash setPos _newPos;
 
 if (_model != "Mi8Wreck") then {
@@ -51,6 +51,9 @@ if (_model != "Mi8Wreck") then {
 
 // spawn loot
 _num = round(random _randomLootNum) + _guaranteedLoot;
+
+// combine all loot into one array
+_buildingLoot = _model call building_items;
 
 // combine all loot into one array
 _buildingLoot = _model call building_items;
