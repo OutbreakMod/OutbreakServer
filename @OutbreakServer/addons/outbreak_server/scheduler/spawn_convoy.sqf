@@ -71,9 +71,9 @@ if (count (_buildingLoot) > 0) then {
 				_item = [_lootPos, _loot select 0, _loot select 1, _model] call loot_holder;
 				
 				_lootArray = _lootArray + [_item];
-				_crash setVariable ["lootarray", _lootArray];
-				_crash setVariable ["loottimer", 0, true];
-				_crash getVariable ["lootRespawn", false];
+				_crash setVariable ["lootarray", _lootArray, true];
+				_crash setVariable ["loottimer", 0, true, true];
+				_crash getVariable ["lootRespawn", false, true];
 			};
 		};
 	};

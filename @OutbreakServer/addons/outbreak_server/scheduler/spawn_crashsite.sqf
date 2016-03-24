@@ -38,7 +38,6 @@ while {_needsrelocated} do {
 
 _crash = createVehicle [_model, _position, [], 0, "CAN_COLLIDE"];
 _crash setDir (random 360);
-_crash enableSimulation false;
 
 _newPos = _crash modelToWorld [0,0,0];
 _newPos set [2, _heightAdjustment]; // height adjustment
@@ -68,9 +67,9 @@ if (count (_buildingLoot) > 0) then {
 				_item = [_lootPos, _loot select 0, _loot select 1, _model] call loot_holder;
 				
 				_lootArray = _lootArray + [_item];
-				_crash setVariable ["lootarray", _lootArray];
-				_crash setVariable ["loottimer", 0, true];
-				_crash getVariable ["lootRespawn", false];
+				_crash setVariable ["lootarray", _lootArray, true];
+				_crash setVariable ["loottimer", 0, true, true];
+				_crash getVariable ["lootRespawn", false, true];
 			};
 		};
 	};
