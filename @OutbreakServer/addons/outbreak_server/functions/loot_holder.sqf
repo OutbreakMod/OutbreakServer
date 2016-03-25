@@ -103,11 +103,11 @@ if (_itemType == "item") then {
 	};
 };
 
-// stop floating objs
-_weaponHolder setPos _lootPos;
-
 // random rotation
 _weaponHolder setDir (random 360);
+
+// stop floating objs
+_weaponHolder setPos _lootPos;
 
 // return
 _weaponHolder
