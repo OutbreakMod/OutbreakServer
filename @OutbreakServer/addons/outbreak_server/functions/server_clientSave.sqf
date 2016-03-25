@@ -20,7 +20,6 @@ _inventory = _this select 3;
 _legFracture = _this select 4;
 _health = _this select 5;
 _blood = _this select 6;
-_goggles = _this select 7;
 
 // run queries
 
@@ -31,7 +30,6 @@ if (_name != "Error: No unit") then {
 ["users", "inventory", format["%1", _inventory], "uuid", _uuid] call hive_write;
 ["users", "position", format["%1", _position], "uuid", _uuid] call hive_write;
 ["users", "medical", format["%1", [_legFracture, _health, _blood]], "uuid", _uuid] call hive_write;
-["users", "goggles", _goggles, "uuid", _uuid] call hive_write;
 
 _storageObjects = nearestObjects [_position, ["Car", "Helicopter", "Motorcycle", "Ship", "OutbreakShackV1", "OutbreakShackV2", "OutbreakShackV3", "OutbreakShackV4", "OutbreakTent"], 100];
 
