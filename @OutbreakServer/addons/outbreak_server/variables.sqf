@@ -18,37 +18,29 @@ LOOT_TABLES = [];
 
 	_packet = _this select 1;
 	_player = _packet select 0;
-	_clientID = (owner _player);
 	_uuid = format["%1", getPlayerUID _player];
 	
 	_exists = ["users", "uuid", _uuid] call hive_exists;
 	
 	if (_exists) then {
 	
-		// player position
-		_position = ["users", "position", "uuid", _uuid] call hive_read;
-		[_player, ["tp", call compile(format["%1", _position])]] call server_clientCommand;
+		_userData = [format["GetUser, '%1'", _uuid]] call hive_static;
+		_userData = call compile(format["%1", _userData]);
 		
-		// inventory
-		_inventory = toString (call compile(["users", "inventory", "uuid", _uuid] call hive_read));
-		[_player, ["gear", call compile(_inventory)]] call server_clientCommand;
-		
-		_goggles = ["users", "goggles", "uuid", _uuid] call hive_read;
-		[_player, ["goggles", _goggles]] call server_clientCommand;
-		
-		// medical
-		_medical = ["users", "medical", "uuid", _uuid] call hive_read;
-		[_player, ["medical", call compile(format["%1", _medical])]] call server_clientCommand;
-		
-		// login finished
+		waitUntil {!isNil "_userData"};
+	
+		_inventory = _userData select 3;
+		_inventory = call compile(toString _inventory);		
+	
+		[_player, ["goggles", _userData select 2]] call server_clientCommand;
+		[_player, ["gear", _inventory]] call server_clientCommand;
+		[_player, ["tp", _userData select 4]] call server_clientCommand;
+		[_player, ["medical", _userData select 5]] call server_clientCommand;
 		[_player, ["login"]] call server_clientCommand;
 
 	} else {
 	
-		// find new spawn
 		[_player, ["findspawn"]] call server_clientCommand;
-		
-		// create new row
 		_player call hive_newUser;
 	
 	};

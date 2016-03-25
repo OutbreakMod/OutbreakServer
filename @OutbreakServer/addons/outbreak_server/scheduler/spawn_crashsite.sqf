@@ -68,8 +68,8 @@ if (count (_buildingLoot) > 0) then {
 				
 				_lootArray = _lootArray + [_item];
 				_crash setVariable ["lootarray", _lootArray, true];
-				_crash setVariable ["loottimer", 0, true, true];
-				_crash getVariable ["lootRespawn", false, true];
+				_crash setVariable ["loottimer", 0, true];
+				_crash setVariable ["lootRespawn", false, true];
 			};
 		};
 	};

@@ -10,13 +10,6 @@ if (OUTBREAK_EXTRA_BUILDINGS) then {
 	[] execVM format["addons\outbreak_code\extra_buildings\%1\init.sqf", toLower(OUTBREAK_MAP)];
 };
 
-_chance = 0.6;
-
-86400 setOvercast _chance;
-skipTime 24;
-skipTime -24;
-86400 setOvercast _chance;
-skipTime 24;
 
 ////////////////////////////
 ///  Time sync functions ///
