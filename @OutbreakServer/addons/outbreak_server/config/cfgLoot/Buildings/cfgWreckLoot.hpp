@@ -5,6 +5,7 @@ class Land_Wreck_Heli_Attack_02_F : Default {
 		"GeneralTools", 
 		"MilitaryTools", 
 		"USHelicrash", 
+		"Magazines", 
 		"HighCaliberRifles", 
 		"Medical"
 	};
@@ -18,6 +19,7 @@ class MOD_UH1YWreck : Default {
 		"GeneralTools", 
 		"MilitaryTools", 
 		"USHelicrash", 
+		"Magazines", 
 		"HighCaliberRifles", 
 		"Medical"
 	};
@@ -31,6 +33,7 @@ class MOD_Mi8Wreck : Default {
 		"GeneralTools", 
 		"MilitaryTools", 
 		"RUHelicrash", 
+		"Magazines", 
 		"SniperRifles", 
 		"Medical"
 	};
@@ -44,6 +47,7 @@ class Mi8Wreck : Default {
 		"GeneralTools", 
 		"MilitaryTools", 
 		"RUHelicrash", 
+		"Magazines", 
 		"SniperRifles", 
 		"Medical"
 	};

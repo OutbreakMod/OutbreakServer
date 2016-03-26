@@ -261,7 +261,10 @@ class CfgLootCategories {
 			{"CUP_20Rnd_762x51_FNFAL_M", "magazine",0.04},
 			{"CUP_10Rnd_127x99_m107","magazine",0.02},
 			{"CUP_30Rnd_762x39_AK47_M", "magazine",0.05},
-			{"CUP_30Rnd_545x39_AK_M", "magazine",0.06}	
+			{"CUP_30Rnd_545x39_AK_M", "magazine",0.06},
+			{"CUP_20Rnd_762x51_DMR", "magazine",0.03},
+			{"CUP_10Rnd_762x54_SVD_M","magazine",0.03},
+			{"CUP_5Rnd_762x67_G22","magazine",0.03}
 			
 		};
 	};
@@ -281,7 +284,8 @@ class CfgLootCategories {
 		loot[] = {
 			{"6Rnd_45ACP_M","magazine",0.04},
 			{"7Rnd_45ACP_M","magazine",0.04},
-			{"CUP_8Rnd_9x18_Makarov_M","magazine",0.05}
+			{"CUP_8Rnd_9x18_Makarov_M","magazine",0.05},
+			{"CUP_5x_22_LR_17_HMR_M","magazine",0.02}
 		};
 	};
 };
