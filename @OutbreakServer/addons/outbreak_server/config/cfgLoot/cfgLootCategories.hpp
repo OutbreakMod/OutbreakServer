@@ -30,7 +30,7 @@ class CfgLootCategories {
 	class MilitaryPistols {
 		
 		loot[] = {
-			{"hgun_Pistol_heavy_01_F","gun",0.06}, // @mas makarov
+			{"hgun_Pistol_heavy_01_F","gun",0.06},
 			{"muzzle_snds_L","item",0.01}
 		};
 	};
@@ -57,9 +57,9 @@ class CfgLootCategories {
 	class RUHelicrash {
 		
 		loot[] = {
-			{"CUP_arifle_RPK74","gun",0.08}, // @mas
-			{"CUP_lmg_PKM","gun",0.07}, // @mas
-			{"CUP_srifle_VSSVintorez_pso","gun",0.03} // @mas
+			{"CUP_arifle_RPK74","gun",0.08},
+			{"CUP_lmg_PKM","gun",0.07},
+			{"CUP_srifle_VSSVintorez_pso","gun",0.03}
 		};
 	};
 	
@@ -80,12 +80,6 @@ class CfgLootCategories {
 	class AssaultRifles {
 		
 		loot[] = {
-			//{"arifle_Katiba_C_ACO_pointer_snds_F","gun",00.3},
-			//{"arifle_Katiba_C_F","gun",0.6},
-			//{"arifle_MXC_F","gun",0.08},
-			//{"arifle_MX_Holo_pointer_F","gun",0.07},
-			//{"arifle_MXM_RCO_pointer_snds_F","gun",0.03},
-			//{"arifle_Katiba_F","gun",0.08}
 			{"CUP_arifle_AK74M","gun",0.03},
 			{"CUP_arifle_AKS74U","gun",0.05},
 			{"CUP_arifle_AK74","gun",0.07},
@@ -206,7 +200,7 @@ class CfgLootCategories {
 	class Hunting {
 		
 		loot[] = {
-			{"CUP_srifle_CZ750_SOS_bipod","gun",0.01}, //@mas
+			{"CUP_srifle_CZ750_SOS_bipod","gun",0.01},
 			{"CUP_srifle_CZ550", "gun",0.04}
 		};
 	};
@@ -216,7 +210,7 @@ class CfgLootCategories {
 		loot[] = {
 			{"CUP_srifle_CZ550", "gun",0.03},
 			{"CUP_sgun_Saiga12K","gun",0.06},
-			{"WoodPileBox","supplybox",0.1}, //0.1
+			{"WoodPileBox","supplybox",0.1},
 			{"carrot", "item",0.05},
 			{"potato", "item",0.05}
 		};
@@ -265,9 +259,9 @@ class CfgLootCategories {
 		loot[] = {
 			{"CUP_30Rnd_556x45_Stanag", "magazine",0.02},
 			{"CUP_20Rnd_762x51_FNFAL_M", "magazine",0.04},
-			{"CUP_10Rnd_127x99_m107","magazine",0.02}, // @mas
-			{"CUP_30Rnd_762x39_AK47_M", "magazine",0.05}, // @mas
-			{"CUP_30Rnd_545x39_AK_M", "magazine",0.06} // @mas	
+			{"CUP_10Rnd_127x99_m107","magazine",0.02},
+			{"CUP_30Rnd_762x39_AK47_M", "magazine",0.05},
+			{"CUP_30Rnd_545x39_AK_M", "magazine",0.06}	
 			
 		};
 	};
@@ -275,9 +269,9 @@ class CfgLootCategories {
 	class CivillianPistols {
 		
 		loot[] = {
-			{"Mod_1911","gun",0.04}, // @mas makarov
-			{"Mod_Revolver", "gun",1},
-			{"CUP_hgun_Makarov", "gun",0.06}			// @mas russian mil pistol
+			{"Mod_1911","gun",0.04},
+			{"Mod_Revolver", "gun",0.04},
+			{"CUP_hgun_Makarov", "gun",0.06}
 		};
 	};
 
@@ -285,9 +279,9 @@ class CfgLootCategories {
 	class CivillianMagazines {
 		
 		loot[] = {
-			{"6Rnd_45ACP_M","magazine",1}, // @mas
+			{"6Rnd_45ACP_M","magazine",0.04},
 			{"7Rnd_45ACP_M","magazine",0.04},
-			{"CUP_8Rnd_9x18_Makarov_M","magazine",0.05}// @mas
+			{"CUP_8Rnd_9x18_Makarov_M","magazine",0.05}
 		};
 	};
 };

@@ -3,8 +3,6 @@
 	@author: TheAmazingAussie
 */
 
-//private ["_crashSiteType", "_maxLootRadius", "_minLootRadius", "_needsrelocated", "_model", "_marker", "_istoomany", "_crash"];
-
 _lootArray = [];
 _randomLootNum = 3;
 _guaranteedLoot  = 4;
@@ -17,7 +15,6 @@ _fire = true;
 _crashModels = ["Mi8Wreck", "MOD_UH1YWreck"];
 _model = _crashModels call BIS_fnc_selectRandom;
 
-// find heli crash site model
 _lootTable = configFile >> "CfgBuildingType" >> _model;
 _heightAdjustment = 0;
 
@@ -36,6 +33,7 @@ _crash = createVehicle [_model, _position, [], 0, "CAN_COLLIDE"];
 _crash setDir (random 360);
 
 _newPos = _crash modelToWorld [0,0,0];
+_newPos set [2, _heightAdjustment];
 _crash setPos _newPos;
 
 if (_model != "Mi8Wreck") then {
@@ -44,8 +42,6 @@ if (_model != "Mi8Wreck") then {
 };
 
 _num = round(random _randomLootNum) + _guaranteedLoot;
-
-// combine all loot into one array
 _buildingLoot = _model call building_items;
 
 if (count (_buildingLoot) > 0) then {
