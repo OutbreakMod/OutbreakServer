@@ -31,6 +31,8 @@ class CfgLootCategories {
 		
 		loot[] = {
 			{"hgun_Pistol_heavy_01_F","gun",0.06},
+			{"CUP_hgun_M9","gun",0.09},
+			{"CUP_hgun_M9_snds","gun",0.06},
 			{"muzzle_snds_L","item",0.01}
 		};
 	};
@@ -48,9 +50,9 @@ class CfgLootCategories {
 		loot[] = {
 			{"tent","single",0.1}, // 10% 
 			{"CUP_arifle_G36A_camo","gun",0.07},
-			{"CUP_arifle_FNFAL","gun",0.06},
+			{"Mod_FNFAL","gun",0.06},
 			{"CUP_arifle_M16A2","gun",0.07},
-			{"CUP_srifle_M14_DMR_LeupoldMk4","gun",0.05}
+			{"Mod_DMR","gun",0.02}
 		};
 	};
 	
@@ -123,7 +125,7 @@ class CfgLootCategories {
 		
 		loot[] = {
 			{"CUP_srifle_AS50_SBPMII","gun",0.01},
-			{"CUP_srifle_G22_des_SBPMII","gun",0.02},
+			{"CUP_srifle_G22_des_SBPMII","gun",0.05},
 			{"CUP_srifle_M107_LeupoldVX3","gun",0.01}
 		};
 	};
@@ -201,7 +203,8 @@ class CfgLootCategories {
 		
 		loot[] = {
 			{"CUP_srifle_CZ750_SOS_bipod","gun",0.01},
-			{"CUP_srifle_CZ550", "gun",0.04}
+			{"CUP_srifle_CZ550", "gun",0.04},
+			{"CUP_srifle_LeeEnfield", "gun",0.05}
 		};
 	};
 	
@@ -209,7 +212,8 @@ class CfgLootCategories {
 		
 		loot[] = {
 			{"CUP_srifle_CZ550", "gun",0.03},
-			{"CUP_sgun_Saiga12K","gun",0.06},
+			{"CUP_sgun_Saiga12K","gun",0.04},
+			{"CUP_srifle_LeeEnfield", "gun",0.06},
 			{"WoodPileBox","supplybox",0.1},
 			{"carrot", "item",0.05},
 			{"potato", "item",0.05}
@@ -258,11 +262,11 @@ class CfgLootCategories {
 		
 		loot[] = {
 			{"CUP_30Rnd_556x45_Stanag", "magazine",0.02},
-			{"CUP_20Rnd_762x51_FNFAL_M", "magazine",0.04},
+			{"20Rnd_762x51_FNFAL_M", "magazine",0.04},
 			{"CUP_10Rnd_127x99_m107","magazine",0.02},
 			{"CUP_30Rnd_762x39_AK47_M", "magazine",0.05},
 			{"CUP_30Rnd_545x39_AK_M", "magazine",0.06},
-			{"CUP_20Rnd_762x51_DMR", "magazine",0.03},
+			{"20Rnd_762x51_DMR", "magazine",0.03},
 			{"CUP_10Rnd_762x54_SVD_M","magazine",0.03},
 			{"CUP_5Rnd_762x67_G22","magazine",0.03}
 			
@@ -272,7 +276,7 @@ class CfgLootCategories {
 	class CivillianPistols {
 		
 		loot[] = {
-			{"Mod_1911","gun",0.04},
+			{"Mod_1911","gun",0.03},
 			{"Mod_Revolver", "gun",0.04},
 			{"CUP_hgun_Makarov", "gun",0.06}
 		};
