@@ -3,6 +3,8 @@
 	@author: TheAmazingAussie
 */
 
+private ["_item", "_buildingLoot", "_clutter", "_clutterPos", "_crash", "_crashModels", "_fire", "_fireEffect", "_guaranteedLoot", "_heightAdjustment", "_i", "_istoomany", "_item", "_itemPos", "_loot", "_lootArray", "_lootPos"];
+
 _lootArray = [];
 _randomLootNum = 3;
 _guaranteedLoot  = 4;
@@ -54,7 +56,16 @@ if (count (_buildingLoot) > 0) then {
 				_maxLootRadius = (random _maxLootRadius) + _minLootRadius;
 				_lootPos = [_position, _maxLootRadius, random 360] call BIS_fnc_relPos;
 				
+				_clutter = createVehicle ["ClutterCutter_small_2_EP1", _lootPos, [], 0, "CAN_COLLIDE"];
+				_clutterPos = getPosATL _clutter;
+				_clutterPos set [2, 0];
+				_clutter setPosATL _clutterPos;
+				
 				_item = [_lootPos, _loot select 0, _loot select 1, _model] call loot_holder;
+				_itemPos = getPosATL _item;
+				_itemPos set [2, 0];
+				_item setPosATL _itemPos;
+
 				_lootArray = _lootArray + [_item];
 			};
 		};
