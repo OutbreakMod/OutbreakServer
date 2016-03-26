@@ -31,6 +31,8 @@ class CfgLootCategories {
 		
 		loot[] = {
 			{"hgun_Pistol_heavy_01_F","gun",0.06},
+			{"CUP_hgun_M9","gun",0.09},
+			{"CUP_hgun_M9_snds","gun",0.06},
 			{"muzzle_snds_L","item",0.01}
 		};
 	};
@@ -201,7 +203,8 @@ class CfgLootCategories {
 		
 		loot[] = {
 			{"CUP_srifle_CZ750_SOS_bipod","gun",0.01},
-			{"CUP_srifle_CZ550", "gun",0.04}
+			{"CUP_srifle_CZ550", "gun",0.04},
+			{"CUP_srifle_LeeEnfield", "gun",0.05}
 		};
 	};
 	
@@ -209,7 +212,8 @@ class CfgLootCategories {
 		
 		loot[] = {
 			{"CUP_srifle_CZ550", "gun",0.03},
-			{"CUP_sgun_Saiga12K","gun",0.06},
+			{"CUP_sgun_Saiga12K","gun",0.04},
+			{"CUP_srifle_LeeEnfield", "gun",0.06}
 			{"WoodPileBox","supplybox",0.1},
 			{"carrot", "item",0.05},
 			{"potato", "item",0.05}
