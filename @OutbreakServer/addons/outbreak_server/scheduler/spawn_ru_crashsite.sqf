@@ -6,6 +6,8 @@
 private ["_item", "_buildingLoot", "_clutter", "_clutterPos", "_crash", "_crashModels", "_fire", "_fireEffect", "_guaranteedLoot", "_heightAdjustment", "_i", "_istoomany", "_item", "_itemPos", "_loot", "_lootArray", "_lootPos"];
 
 _lootArray = [];
+_spawnType = _this select 0;
+
 _randomLootNum = 3;
 _guaranteedLoot  = 4;
 
@@ -14,7 +16,7 @@ _minLootRadius = 3;
 
 _fire = true;
 
-_crashModels = ["Mi8Wreck", "MOD_UH1YWreck"];
+_crashModels = ["Mi8Wreck"];
 _model = _crashModels call BIS_fnc_selectRandom;
 
 _lootTable = configFile >> "CfgBuildingType" >> _model;
@@ -37,6 +39,8 @@ _crash setDir (random 360);
 _newPos = _crash modelToWorld [0,0,0];
 _newPos set [2, _heightAdjustment];
 _crash setPos _newPos;
+
+_fireEffect = objNull;
 
 if (_model != "Mi8Wreck") then {
 	_fireEffect = createVehicle ["test_EmptyObjectForSmoke", _newPos, [], 0, "CAN_COLLIDE"];
@@ -72,11 +76,19 @@ if (count (_buildingLoot) > 0) then {
 	};
 };
 
+if (_fireEffect != objNull) then {
+	_lootArray = _lootArray + [_fireEffect];
+};
+
 _crash setVariable ["lootarray", _lootArray, true];
 _crash setVariable ["loottimer", 0, true];
 _crash setVariable ["lootRespawn", false, true];
+_crash setVariable ["spawnType", _spawnType, true];
+_crash setVariable ["markerID", str(_position), true];
 
 _markerstr = createMarker [str(_position), _position];
 _markerstr setMarkerShape "ICON";
 _markerstr setMarkerType "mil_dot";
 _markerstr setMarkerText _model;
+
+_crash;

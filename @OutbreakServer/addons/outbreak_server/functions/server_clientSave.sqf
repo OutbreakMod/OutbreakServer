@@ -46,6 +46,11 @@ for "_i" from 0 to (count _storageObjects) - 1 do {
 	
 	_id = _vehicle getVariable ["ObjectID", 0];
 	
+	if (_id == 0) then {
+		[_vehicle] call hive_new_vehicle;
+		_id = _vehicle getVariable ["ObjectID", 0];
+	};
+	
 	_type = typeOf _vehicle;
 	_hitPoints = (count (configFile >> "CfgVehicles" >> _type >> "HitPoints")) - 1;
 	_sections = [];
