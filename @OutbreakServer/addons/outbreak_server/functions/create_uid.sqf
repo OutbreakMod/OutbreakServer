@@ -22,5 +22,5 @@ if (_z < 1) then {
 	_z = _z * -10;
 };
 
-_objectID = (_x * 10) + (_y * 10) + (_firstData select 2);
+_objectID = (_x * 10) + (_y * 10) + (_z * 10);
 _objectID;

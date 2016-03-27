@@ -63,8 +63,7 @@ if (count _objects < 1) then {
 		_dir = _x select 3;
 		
 		_veh = [_class, _position, _dir] call hive_new_vehicle;
-
-		deleteVehicle (_veh);
+		deleteVehicle (_veh); // delete the vehicle because the next function will load it
 		
 	} forEach _objectSpawns;
 
