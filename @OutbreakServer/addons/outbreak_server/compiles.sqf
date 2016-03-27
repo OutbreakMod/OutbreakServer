@@ -64,3 +64,5 @@ player_apply_morphine = compile preProcessFileLineNumbers "addons\outbreak_code\
 // infected
 player_spawnZombies = compile preProcessFileLineNumbers "addons\outbreak_code\functions\player_spawnZombies.sqf";
 fnc_startZombie = compile preProcessFileLineNumbers "addons\outbreak_code\functions\ai\fnc_startZombie.sqf";
+fnc_findTarget = compile preProcessFileLineNumbers "addons\outbreak_code\functions\ai\fnc_findTarget.sqf";
+fnc_hasTarget = compile preProcessFileLineNumbers "addons\outbreak_code\functions\ai\fnc_hasTarget.sqf";
