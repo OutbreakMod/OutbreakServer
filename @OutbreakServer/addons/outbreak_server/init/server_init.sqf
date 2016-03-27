@@ -44,7 +44,7 @@ diag_log format["TIME SYNC: Time type: %1 with setting: %2", _timeSetting, _valu
 ///   Vehicle Spawn Objs ///
 ////////////////////////////
 
-_objects = ["GetObjectStorage, 'DEV001'"] call hive_static;
+_objects = [format["GetObjectStorage, '%1'"], MOD_HIVE] call hive_static;
 _objects = call compile(format["%1", _objects]);
 
 _objectSpawns = ["GetObjectSpawns"] call hive_static;
@@ -75,7 +75,7 @@ if (count _objects < 1) then {
 
 diag_log "SERVER: Running world storage objects";
 
-_objects = ["GetObjectStorage, 'DEV001'"] call hive_static;
+_objects = [format["GetObjectStorage, '%1'"], MOD_HIVE] call hive_static;
 _objects = call compile(format["%1", _objects]);
 
 waitUntil {!isNil "_objects"};
@@ -124,8 +124,8 @@ for "_i" from 0 to (count _objects) - 1 do {
 diag_log "SERVER: Running scheduler";
 
 _scheduler = [
-	[false, 1, "spawn_us_crashsite"],
-	[false, 1, "spawn_ru_crashsite"]
+	[false, 5, "spawn_us_crashsite"],
+	[false, 5, "spawn_ru_crashsite"]
 ];
 
 [_scheduler] execVM "addons\outbreak_server\scheduler\scheduler_init.sqf";
