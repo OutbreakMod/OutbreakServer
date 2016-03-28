@@ -125,8 +125,7 @@ LOOT_TABLES = [];
 					deleteVehicle (_lootArray select _i);
 				};
 			};
-
-
+			
 			_building setVariable ["lootarray", []];
 			_building call building_spawnLoot;
 		};
