@@ -15,7 +15,7 @@ if (OUTBREAK_EXTRA_BUILDINGS) then {
 ///  Time sync functions ///
 ////////////////////////////
 
-diag_log format["TIME SYNC: Loading time sync settings.."];
+/*diag_log format["TIME SYNC: Loading time sync settings.."];
 
 _timeSetting = ["TIME_SETTING"] call hive_config;
 _value = ["TIME_VALUE"] call hive_config;
@@ -34,17 +34,17 @@ if (_timeSetting == "Static") then {
 	_newDate = ["GetDateTimezone"] call hive_static;
 	_newDate = call compile(format["%1", _newDate]);
 	setDate _newDate;
-};
+};*/
 
 //[[[],[]],[[],[]],[[],[]],[[],[]]]
 
-diag_log format["TIME SYNC: Time type: %1 with setting: %2", _timeSetting, _value];
+//diag_log format["TIME SYNC: Time type: %1 with setting: %2", _timeSetting, _value];
 
 ////////////////////////////
 ///   Vehicle Spawn Objs ///
 ////////////////////////////
 
-_objects = [format["GetObjectStorage, '%1'"], MOD_HIVE] call hive_static;
+/*_objects = [format["GetObjectStorage, '%1'"], MOD_HIVE] call hive_static;
 _objects = call compile(format["%1", _objects]);
 
 _objectSpawns = ["GetObjectSpawns"] call hive_static;
@@ -67,13 +67,13 @@ if (count _objects < 1) then {
 		
 	} forEach _objectSpawns;
 
-};
+};*/
 
 ////////////////////////////
 ///   World Storage Objs ///
 ////////////////////////////
 
-diag_log "SERVER: Running world storage objects";
+/*diag_log "SERVER: Running world storage objects";
 
 _objects = [format["GetObjectStorage, '%1'"], MOD_HIVE] call hive_static;
 _objects = call compile(format["%1", _objects]);
@@ -115,7 +115,7 @@ for "_i" from 0 to (count _objects) - 1 do {
 		
 	} foreach _hitpoints;
 	
-};
+};*/
 
 ////////////////////
 ///   Scheduler  ///

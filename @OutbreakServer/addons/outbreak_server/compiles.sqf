@@ -1,12 +1,15 @@
+// extdb2
+fn_async = compile preProcessFileLineNumbers "addons\outbreak_server\extdb2\fn_async.sqf";
+fn_strip = compile preProcessFileLineNumbers "addons\outbreak_server\extdb2\fn_strip.sqf";
+
 // hive
 hive_read = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_read.sqf";
 hive_write = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_write.sqf";
 hive_exists = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_exists.sqf";
 hive_delete = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_delete.sqf";
-hive_config = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_config.sqf";
-hive_static = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_static.sqf";
 hive_new_vehicle = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_new_vehicle.sqf";
-create_uid = compile preProcessFileLineNumbers "addons\outbreak_server\functions\create_uid.sqf";
+hive_new_user = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_new_user.sqf";
+hive_get_user = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_get_user.sqf";
 
 //server
 server_spawnCityWrecks = compile preProcessFileLineNumbers "addons\outbreak_server\functions\server_spawnCityWrecks.sqf";
@@ -16,9 +19,6 @@ server_clientSave = compile preProcessFileLineNumbers "addons\outbreak_server\fu
 server_playerDisconnect = compile preProcessFileLineNumbers "addons\outbreak_server\functions\server_playerDisconnect.sqf";
 server_clientCommand = compile preProcessFileLineNumbers "addons\outbreak_server\functions\server_clientCommand.sqf";
 
-// inserts
-hive_newUser = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_newUser.sqf";
-
 // building
 building_items = compile preProcessFileLineNumbers "addons\outbreak_server\functions\building_items.sqf";
 building_spawnLoot = compile preProcessFileLineNumbers "addons\outbreak_server\functions\building_spawnLoot.sqf";
@@ -26,6 +26,7 @@ loot_holder = compile preProcessFileLineNumbers "addons\outbreak_server\function
 
 // vehicles
 vehicle_damage = compile preProcessFileLineNumbers "addons\outbreak_server\functions\vehicle_damage.sqf";
+create_uid = compile preProcessFileLineNumbers "addons\outbreak_server\functions\create_uid.sqf";
 
 // general player functions
 player_respawn = compile preProcessFileLineNumbers "addons\outbreak_code\functions\player_respawn.sqf";

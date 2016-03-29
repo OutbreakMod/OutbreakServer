@@ -9,14 +9,8 @@ _table = _this select 0;
 _where = _this select 1;
 _equals = _this select 2;
 
-// log request
-//diag_log format["ArmaHive: Request for exists at table %1, where %2, equals %3", _table, _where, _equals];
+_data = [];
+_data = call compile ("extDB2" callExtension format["0:%1:SELECT * FROM %2 WHERE %3 = '%4'" , SQL_ID, _table, _where, _equals]);
 
-// send request to ArmaHive through Arma2Net
-_data = call compile("Arma2Net.Unmanaged" callExtension format["ArmaHive [Exists, '%1', '%2', '%3']", _table, _where, _equals]);
-
-//diag_log format["ArmaHive: Response for exists: %1", _data];
-
-// compile code
-_response = (_data == "true");
-_response
+_exists = (count _data) > 0;
+_exists;

@@ -24,10 +24,10 @@ LOOT_TABLES = [];
 	
 	if (_exists) then {
 	
-		_userData = [format["GetUser, '%1'", _uuid]] call hive_static;
-		_userData = call compile(format["%1", _userData]);
+		_userData = _uuid call hive_get_user;
+		diag_log format["%1", _userData];
 		
-		waitUntil {!isNil "_userData"};
+		/*waitUntil {!isNil "_userData"};
 	
 		_inventory = _userData select 2;
 		_inventory = call compile(toString _inventory);		
@@ -35,12 +35,12 @@ LOOT_TABLES = [];
 		[_player, ["gear", _inventory]] call server_clientCommand;
 		[_player, ["tp", _userData select 3]] call server_clientCommand;
 		[_player, ["medical", _userData select 4]] call server_clientCommand;
-		[_player, ["login"]] call server_clientCommand;
+		[_player, ["login"]] call server_clientCommand;*/
 
 	} else {
 	
 		[_player, ["findspawn"]] call server_clientCommand;
-		_player call hive_newUser;
+		_player call hive_new_user;
 	
 	};
 };
@@ -85,12 +85,10 @@ LOOT_TABLES = [];
 	_damage = damage _vehicle;
 	_inventory = [];
 	
-	_update = format["NewObject, '%1','%2','%3','%4','%5','%6','%7','%8'", MOD_HIVE, _class, _worldspace, _dir, _inventory, _hitPoints, _fuel, _damage];
-	
-	_response = [_update] call hive_static;
-	diag_log format ["hive_newObject response: %1", _response];
-	
-	_vehicle setVariable ["ObjectID", parseNumber(_response), true]
+	//_update = format["NewObject, '%1','%2','%3','%4','%5','%6','%7','%8'", MOD_HIVE, _class, _worldspace, _dir, _inventory, _hitPoints, _fuel, _damage];
+	//_response = [_update] call hive_static;
+	//diag_log format ["hive_newObject response: %1", _response];
+	//_vehicle setVariable ["ObjectID", parseNumber(_response), true]
 };
 
 "server_spawnLoot" addPublicVariableEventHandler {

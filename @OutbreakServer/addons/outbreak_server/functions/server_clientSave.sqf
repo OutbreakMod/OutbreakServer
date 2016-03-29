@@ -74,8 +74,8 @@ for "_i" from 0 to (count _storageObjects) - 1 do {
 	_fuel = fuel _vehicle;
 	_damage = getDammage _vehicle;
 
-	_update = format["UpdateObject, '%1','%2','%3','%4','%5','%6','%7'", _id, _itemInventory, _savedHitPoints, _worldSpace, _dir,_fuel,_damage];
-	[_update] call hive_static;
+	//_update = format["UpdateObject, '%1','%2','%3','%4','%5','%6','%7'", _id, _itemInventory, _savedHitPoints, _worldSpace, _dir,_fuel,_damage];
+	//[_update] call hive_static;
 	
 };
 		
