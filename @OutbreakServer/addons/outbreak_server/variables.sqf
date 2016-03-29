@@ -132,3 +132,12 @@ LOOT_TABLES = [];
 	};
 };
 
+"server_spawnZombie" addPublicVariableEventHandler {
+	
+	_packet = _this select 1;
+	_position = _packet select 0;
+	
+	_agent = createAgent ["Zombie", _position, [], 0, "NONE"];
+	[_agent] call fnc_startZombie;
+};
+
