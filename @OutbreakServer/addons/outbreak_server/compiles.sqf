@@ -1,6 +1,7 @@
 // extdb2
-fn_async = compile preProcessFileLineNumbers "addons\outbreak_server\extdb2\fn_async.sqf";
-fn_strip = compile preProcessFileLineNumbers "addons\outbreak_server\extdb2\fn_strip.sqf";
+DB_fnc_asyncCall = compile preProcessFileLineNumbers "addons\outbreak_server\functions\extdb2\DB_fnc_asyncCall.sqf";
+DB_fnc_init = compile preProcessFileLineNumbers "addons\outbreak_server\functions\extdb2\DB_fnc_init.sqf";
+fn_strip = compile preProcessFileLineNumbers "addons\outbreak_server\functions\extdb2\fn_strip.sqf";
 
 // hive
 hive_read = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_read.sqf";
