@@ -24,7 +24,7 @@ LOOT_TABLES = [];
 	
 	if (_exists) then {
 	
-		_userData = call hive_get_user;
+		_userData = _player call hive_get_user;
 		
 		waitUntil {!isNil "_userData"};
 	
