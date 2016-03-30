@@ -6,7 +6,8 @@ hive_delete = compile preProcessFileLineNumbers "addons\outbreak_server\function
 hive_config = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_config.sqf";
 hive_static = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_static.sqf";
 hive_new_vehicle = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_new_vehicle.sqf";
-create_uid = compile preProcessFileLineNumbers "addons\outbreak_server\functions\create_uid.sqf";
+hive_new_user = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_new_user.sqf";
+hive_get_user = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_get_user.sqf";
 
 //server
 server_spawnCityWrecks = compile preProcessFileLineNumbers "addons\outbreak_server\functions\server_spawnCityWrecks.sqf";
@@ -17,12 +18,12 @@ server_playerDisconnect = compile preProcessFileLineNumbers "addons\outbreak_ser
 server_clientCommand = compile preProcessFileLineNumbers "addons\outbreak_server\functions\server_clientCommand.sqf";
 
 // inserts
-hive_newUser = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_newUser.sqf";
 
 // building
 building_items = compile preProcessFileLineNumbers "addons\outbreak_server\functions\building_items.sqf";
 building_spawnLoot = compile preProcessFileLineNumbers "addons\outbreak_server\functions\building_spawnLoot.sqf";
 loot_holder = compile preProcessFileLineNumbers "addons\outbreak_server\functions\loot_holder.sqf";
+create_uid = compile preProcessFileLineNumbers "addons\outbreak_server\functions\create_uid.sqf";
 
 // vehicles
 vehicle_damage = compile preProcessFileLineNumbers "addons\outbreak_server\functions\vehicle_damage.sqf";

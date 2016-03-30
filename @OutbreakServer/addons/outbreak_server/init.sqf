@@ -14,15 +14,21 @@ if (init_done) exitWith {};
 
 diag_log "SERVER INIT: Outbreak Mod";
 
-// run variables
-[] execVM "addons\outbreak_server\variables.sqf";
-
 call compile preprocessFileLineNumbers "addons\outbreak_server\compiles.sqf";
 
-// run server
-[] execVM "addons\outbreak_server\init\server_init.sqf";
+// test mysql connection
+_isConnected = (["TestConnection"] call hive_static) == "true";
 
-// disconnect handler
-onPlayerDisconnected {[_uid,_name] spawn server_playerDisconnect;};
+if (_isConnected) then {
+
+	diag_log format["HIVE: Connecting to MySQL was successful"];
+
+	[] execVM "addons\outbreak_server\variables.sqf";
+	[] execVM "addons\outbreak_server\init\server_init.sqf";
+	onPlayerDisconnected {[_uid,_name] spawn server_playerDisconnect;};
+	
+} else {
+	diag_log format["HIVE: Failed to connect to MySQL"];
+};
 
 init_done = true;

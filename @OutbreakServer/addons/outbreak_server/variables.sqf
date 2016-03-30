@@ -18,14 +18,13 @@ LOOT_TABLES = [];
 
 	_packet = _this select 1;
 	_player = _packet select 0;
-	_uuid = format["%1", getPlayerUID _player];
 	
+	_uuid = format["%1", getPlayerUID _player];
 	_exists = ["users", "uuid", _uuid] call hive_exists;
 	
 	if (_exists) then {
 	
-		_userData = [format["GetUser, '%1'", _uuid]] call hive_static;
-		_userData = call compile(format["%1", _userData]);
+		_userData = _player call hive_get_user;
 		
 		waitUntil {!isNil "_userData"};
 	
@@ -40,7 +39,7 @@ LOOT_TABLES = [];
 	} else {
 	
 		[_player, ["findspawn"]] call server_clientCommand;
-		_player call hive_newUser;
+		_player call hive_new_user;
 	
 	};
 };
@@ -55,7 +54,6 @@ LOOT_TABLES = [];
 
 	_packet = _this select 1;
 	_player = _packet select 0;
-	
 	["users", "uuid", getPlayerUID _player] call hive_delete;
 };
 
