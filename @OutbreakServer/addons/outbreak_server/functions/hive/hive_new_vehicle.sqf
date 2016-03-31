@@ -59,7 +59,7 @@ _veh setDir _dir;
 _veh setVectorDir (_worldspace select 1);
 _veh setVectorUp (_worldspace select 2);
 
-_objectID = [_worldspace] call create_uid;
+_objectID = _location call create_uid;
 _veh setVariable ["ObjectID", _objectID, true];
 
 // insert into db

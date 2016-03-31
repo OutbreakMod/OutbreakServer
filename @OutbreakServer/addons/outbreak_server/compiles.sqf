@@ -21,7 +21,6 @@ server_clientCommand = compile preProcessFileLineNumbers "addons\outbreak_server
 building_items = compile preProcessFileLineNumbers "addons\outbreak_server\functions\building_items.sqf";
 building_spawnLoot = compile preProcessFileLineNumbers "addons\outbreak_server\functions\building_spawnLoot.sqf";
 loot_holder = compile preProcessFileLineNumbers "addons\outbreak_server\functions\loot_holder.sqf";
-create_uid = compile preProcessFileLineNumbers "addons\outbreak_server\functions\create_uid.sqf";
 
 // vehicles
 vehicle_damage = compile preProcessFileLineNumbers "addons\outbreak_server\functions\vehicle_damage.sqf";
