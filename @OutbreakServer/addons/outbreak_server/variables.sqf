@@ -35,6 +35,11 @@ LOOT_TABLES = [];
 		[_player, ["tp", _userData select 3]] call server_clientCommand;
 		[_player, ["medical", _userData select 4]] call server_clientCommand;
 		[_player, ["login"]] call server_clientCommand;
+		
+		// Update name
+		if (_name != "Error: No unit") then {
+			["users", "name", _name, "uuid", _uuid] call hive_write;
+		};
 
 	} else {
 	

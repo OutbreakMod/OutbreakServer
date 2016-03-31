@@ -17,8 +17,6 @@ server_clientSave = compile preProcessFileLineNumbers "addons\outbreak_server\fu
 server_playerDisconnect = compile preProcessFileLineNumbers "addons\outbreak_server\functions\server_playerDisconnect.sqf";
 server_clientCommand = compile preProcessFileLineNumbers "addons\outbreak_server\functions\server_clientCommand.sqf";
 
-// inserts
-
 // building
 building_items = compile preProcessFileLineNumbers "addons\outbreak_server\functions\building_items.sqf";
 building_spawnLoot = compile preProcessFileLineNumbers "addons\outbreak_server\functions\building_spawnLoot.sqf";
@@ -61,7 +59,6 @@ fnc_selectRandom = compile preProcessFileLineNumbers "addons\outbreak_code\funct
 // actions
 player_build = compile preProcessFileLineNumbers "addons\outbreak_code\actions\player_build.sqf";
 player_apply_morphine = compile preProcessFileLineNumbers "addons\outbreak_code\actions\apply_morphine.sqf";
-
 
 // infected
 player_spawnZombies = compile preProcessFileLineNumbers "addons\outbreak_code\functions\player_spawnZombies.sqf";

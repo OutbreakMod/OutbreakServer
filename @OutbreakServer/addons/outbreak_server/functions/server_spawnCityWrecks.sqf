@@ -6,6 +6,7 @@
 private ["_nearestLoc", "_wrecks", "_townPos", "_roads", "_nearOtherWrecks", "_wreck", "_veh"];
 
 _nearestLoc = nearestLocations [getMarkerPos "center", ["NameCityCapital","NameCity","NameVillage"], 10000];
+
 _wrecks = [
 	"SKODAWreck",
 	"HMMWVWreck",
@@ -18,7 +19,7 @@ _wrecks = [
 
 {
 	_townPos = locationPosition _x;
-	_roads = _townPos nearRoads 400;
+	_roads = _townPos nearRoads 200;
 	
 	for "_i" from 1 to count (_roads) do {
 		
