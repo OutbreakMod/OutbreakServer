@@ -11,7 +11,7 @@ _uuid = format["%1", getPlayerUID _unit];
 _exists = ["users", "uuid", _uuid] call hive_exists;
 
 if (!_exists) then {
-	_unit call hive_newUser;
+	_unit call hive_new_user;
 };
 
 _name = _this select 1;
