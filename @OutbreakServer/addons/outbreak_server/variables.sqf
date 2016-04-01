@@ -112,7 +112,7 @@ LOOT_TABLES = [];
 					
 					_zombiePosition = [(position _building), (random _spawnMaxRadius) + _spawnMinRadius, random 360] call BIS_fnc_relPos;
 					_agent = createAgent ["Zombie", _zombiePosition, [], 0, "NONE"];
-					[_agent] call fnc_startZombie;
+					[_agent] call fnc_zombie;
 				};
 				
 				_building setVariable ["helicrashSpawnZeds", false, true];
@@ -137,6 +137,6 @@ LOOT_TABLES = [];
 	_position = _packet select 0;
 	
 	_agent = createAgent ["Zombie", _position, [], 0, "NONE"];
-	[_agent] call fnc_startZombie;
+	[_agent] call fnc_zombie;
 };
 
