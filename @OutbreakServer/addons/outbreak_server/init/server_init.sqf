@@ -10,6 +10,7 @@ if (OUTBREAK_EXTRA_BUILDINGS) then {
 	[] execVM format["addons\outbreak_code\extra_buildings\%1\init.sqf", toLower(OUTBREAK_MAP)];
 };
 
+diag_log format ["Running server with hive: %1", MOD_HIVE];
 
 ////////////////////////////
 ///  Time sync functions ///
@@ -44,7 +45,7 @@ diag_log format["TIME SYNC: Time type: %1 with setting: %2", _timeSetting, _valu
 ///   Vehicle Spawn Objs ///
 ////////////////////////////
 
-_objects = [format["GetObjectStorage, '%1'"], MOD_HIVE] call hive_static;
+_objects = [format["GetObjectStorage, '%1'", MOD_HIVE]] call hive_static;
 _objects = call compile(format["%1", _objects]);
 
 _objectSpawns = ["GetObjectSpawns"] call hive_static;
@@ -75,8 +76,10 @@ if (count _objects < 1) then {
 
 diag_log "SERVER: Running world storage objects";
 
-_objects = [format["GetObjectStorage, '%1'"], MOD_HIVE] call hive_static;
+_objects = [format["GetObjectStorage, '%1'", MOD_HIVE]] call hive_static;
 _objects = call compile(format["%1", _objects]);
+
+diag_log format ["SERVER HIVE OBJECTS: %1", _objects];
 
 waitUntil {!isNil "_objects"};
 sleep 0.5;

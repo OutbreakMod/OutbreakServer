@@ -35,12 +35,18 @@ LOOT_TABLES = [];
 		[_player, ["tp", _userData select 3]] call server_clientCommand;
 		[_player, ["medical", _userData select 4]] call server_clientCommand;
 		[_player, ["login"]] call server_clientCommand;
+		
+		// Update name
+		if (_name != "Error: No unit") then {
+			["users", "name", _name, "uuid", _uuid] call hive_write;
+		};
 
 	} else {
-	
-		[_player, ["findspawn"]] call server_clientCommand;
+		
 		_player call hive_new_user;
-	
+		
+		[_player, ["findspawn"]] call server_clientCommand;
+		[_player, ["login"]] call server_clientCommand;		
 	};
 };
 
@@ -83,12 +89,8 @@ LOOT_TABLES = [];
 	_damage = damage _vehicle;
 	_inventory = [];
 	
-	_update = format["NewObject, '%1','%2','%3','%4','%5','%6','%7','%8'", MOD_HIVE, _class, _worldspace, _dir, _inventory, _hitPoints, _fuel, _damage];
-	
-	_response = [_update] call hive_static;
-	diag_log format ["hive_newObject response: %1", _response];
-	
-	_vehicle setVariable ["ObjectID", parseNumber(_response), true]
+	_update = format["NewObject, '%1','%2','%3','%4','%5','%6','%7','%8','%9'", MOD_HIVE, _vehicle getVariable ["ObjectID", 0], _class, _worldspace, _dir, _inventory, _hitPoints, _fuel, _damage];
+	[_update] call hive_static;
 };
 
 "server_spawnLoot" addPublicVariableEventHandler {
@@ -111,7 +113,8 @@ LOOT_TABLES = [];
 					
 					_zombiePosition = [(position _building), (random _spawnMaxRadius) + _spawnMinRadius, random 360] call BIS_fnc_relPos;
 					_agent = createAgent ["Zombie", _zombiePosition, [], 0, "NONE"];
-					[_agent] call fnc_startZombie;
+					
+					[_agent, _building] call fnc_zombie;
 				};
 				
 				_building setVariable ["helicrashSpawnZeds", false, true];
@@ -136,6 +139,6 @@ LOOT_TABLES = [];
 	_position = _packet select 0;
 	
 	_agent = createAgent ["Zombie", _position, [], 0, "NONE"];
-	[_agent] call fnc_startZombie;
+	[_agent] call fnc_zombie;
 };
 

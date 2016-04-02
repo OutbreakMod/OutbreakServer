@@ -25,6 +25,7 @@ if (_isConnected) then {
 
 	[] execVM "addons\outbreak_server\variables.sqf";
 	[] execVM "addons\outbreak_server\init\server_init.sqf";
+	
 	onPlayerDisconnected {[_uid,_name] spawn server_playerDisconnect;};
 	
 } else {

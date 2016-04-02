@@ -85,6 +85,7 @@ _crash setVariable ["loottimer", 0, true];
 _crash setVariable ["lootRespawn", false, true];
 _crash setVariable ["spawnType", _spawnType, true];
 _crash setVariable ["markerID", str(_position), true];
+_crash setVariable ["zombieSpawnTimer", 99999999, true]; // Don't spawn zombies
 
 _markerstr = createMarker [str(_position), _position];
 _markerstr setMarkerShape "ICON";
