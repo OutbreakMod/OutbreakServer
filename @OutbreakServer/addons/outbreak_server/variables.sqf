@@ -42,10 +42,11 @@ LOOT_TABLES = [];
 		};
 
 	} else {
-	
-		[_player, ["findspawn"]] call server_clientCommand;
+		
 		_player call hive_new_user;
-	
+		
+		[_player, ["findspawn"]] call server_clientCommand;
+		[_player, ["login"]] call server_clientCommand;		
 	};
 };
 
@@ -112,7 +113,8 @@ LOOT_TABLES = [];
 					
 					_zombiePosition = [(position _building), (random _spawnMaxRadius) + _spawnMinRadius, random 360] call BIS_fnc_relPos;
 					_agent = createAgent ["Zombie", _zombiePosition, [], 0, "NONE"];
-					[_agent] call fnc_zombie;
+					
+					[_agent, _building] call fnc_zombie;
 				};
 				
 				_building setVariable ["helicrashSpawnZeds", false, true];
