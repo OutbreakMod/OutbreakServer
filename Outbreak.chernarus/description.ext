@@ -25,3 +25,7 @@ enableDebugConsole = 0;
 joinUnassigned = 0;
 respawnOnStart = 0;
 forceRotorLibSimulation = 0;
+
+class CfgFunctions { class XXX { class scripts {
+class noBriefing {preInit=1; file="fnc\skip_briefing.sqf"};
+};};};

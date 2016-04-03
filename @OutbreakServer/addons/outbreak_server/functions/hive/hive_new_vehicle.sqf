@@ -5,6 +5,14 @@
 
 private ["_veh", "_location", "_class", "_position", "_type", "_hitPoints", "_sections", "_savedHitPoints", "_worldspace", "_fuel", "_damage", "_objectID"];
 
+/* PARAMS
+    - Vehicle object 
+   OR
+    - Class name
+    - x, y, z position
+    - Direction
+*/
+
 _class = "";
 _position = [];
 _dir = 0;
