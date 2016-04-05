@@ -24,27 +24,23 @@ if (_itemType == "gun") then {
 	_weaponHolder setVariable ["isLoot", true];
 	_weaponHolder addWeaponCargoGlobal [_itemClass, 1];
 	
-	_amount = floor (random 4);
+	_amount = 0;
+	
+	if ((random 1) < 0.50) then {
+		_amount = _amount + 1;
+		
+		if ((random 1) < 0.20) then {
+			_amount = _amount + 1;
+			
+			if ((random 1) < 0.15) then {
+				_amount = _amount + 1;
+			};
+		};
+	};
+	
 	
 	for "_i" from 1 to _amount do {
-		_magazine = getArray (configFile >> "CfgWeapons" >> _itemClass >> "magazines") call BIS_fnc_selectRandom;
-		
-		if (_itemClass == "LMG_Zafir_F") then {
-			_magazine = "150Rnd_762x54_Box";
-		};
-
-		if (_itemClass == "srifle_LRR_LRPS_F") then {
-			_magazine = "7Rnd_408_Mag";	
-		};
-
-		if (_itemClass == "srifle_GM6_LRPS_F") then {
-			_magazine = "5Rnd_127x108_Mag";
-		};
-
-		if (_itemClass == "LMG_mas_rpk_F") then {
-			_magazine = "100Rnd_mas_545x39_mag";
-		};
-		
+		_magazine = getArray (configFile >> "CfgWeapons" >> _itemClass >> "magazines") select 0;
 		_weaponHolder addMagazineCargoGlobal [_magazine, 1];
 	};
 	
@@ -72,7 +68,22 @@ if (_itemType == "single") then {
 if (_itemType == "magazine") then {
 
 	_weaponHolder setVariable ["isLoot", true];
-	_weaponHolder addMagazineCargoGlobal [_itemClass, floor (random 3)];
+
+	_amount = 0;
+	
+	if ((random 1) < 0.50) then {
+		_amount = _amount + 1;
+		
+		if ((random 1) < 0.20) then {
+			_amount = _amount + 1;
+			
+			if ((random 1) < 0.15) then {
+				_amount = _amount + 1;
+			};
+		};
+	};
+	
+	_weaponHolder addMagazineCargoGlobal [_itemClass, _amount];
 };
 
 if (_itemType == "item") then {
