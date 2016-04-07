@@ -89,9 +89,7 @@
 					_spawnMaxRadius = 8;
 					
 					_zombiePosition = [(position _building), (random _spawnMaxRadius) + _spawnMinRadius, random 360] call BIS_fnc_relPos;
-					_agent = createAgent ["Zombie", _zombiePosition, [], 0, "NONE"];
-					
-					[_agent, _building] call zombie_initialize;
+					[[_zombiePosition, _building], false] call zombie_initialize;
 				};
 				
 				_building setVariable ["helicrashSpawnZeds", false, true];

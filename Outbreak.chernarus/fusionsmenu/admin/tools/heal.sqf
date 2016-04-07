@@ -1,4 +1,4 @@
 hint format ["Healing..."];
-sleep 2;
 player setDamage 0;
+player setVariable ["health", 6000];
 hint format ["Done"];

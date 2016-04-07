@@ -27,6 +27,7 @@ if (pselect5 != "exit") then
 		{
 			hint format ["Healing %1", _name];
 			_x setDamage 0;
+			_x setVariable ["health", 6000];
 			sleep 0.25;
 		};
 	} forEach entities "CAManBase";
