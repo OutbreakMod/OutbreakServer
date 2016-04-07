@@ -133,7 +133,7 @@ _scheduler = [
 
 [_scheduler] execVM "addons\outbreak_server\scheduler\scheduler_init.sqf";
 
-diag_log "SERVER: Running clean up thread";
-[] execVM "addons\outbreak_server\scheduler\cleanup.sqf";
+//diag_log "SERVER: Running clean up thread";
+//[] execVM "addons\outbreak_server\scheduler\cleanup.sqf";
 
 diag_log "Server successfully started!";

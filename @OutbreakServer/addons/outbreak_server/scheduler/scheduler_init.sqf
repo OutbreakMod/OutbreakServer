@@ -75,6 +75,22 @@ _scheduleArray spawn {
 			
 		} foreach _this;
 		
+		////////////
+		/// Clean up functions
+		////////////
+		{
+			_object = _x;
+			_time = _object getVariable ["cleanupTime", 0];
+
+			if (_time > 0) then {
+				_object setVariable ["cleanupTime", (_time - 1)]
+			} else {
+				deleteVehicle (_object);
+				CLEANUP_ARRAY = CLEANUP_ARRAY - [_object];
+			};
+
+		} foreach CLEANUP_ARRAY;
+		
 		sleep 1;
 		_tick = _tick + 1;
 	};

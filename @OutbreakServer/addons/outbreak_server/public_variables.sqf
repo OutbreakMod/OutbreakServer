@@ -36,7 +36,7 @@
 
 "hive_playerSave" addPublicVariableEventHandler {
 	_packet = _this select 1;
-	_packet spawn server_clientSave;
+	_packet call server_clientSave;
 };
 
 "hive_playerDelete" addPublicVariableEventHandler {

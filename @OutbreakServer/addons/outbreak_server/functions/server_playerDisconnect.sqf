@@ -19,7 +19,7 @@ _unit = nil;
 
 if (!isNil '_unit') then {
 
-	[_unit] call player_hiveSync;
+	(_unit getVariable ["playerSaveData", []]) call server_clientSave;
 	
 	_spawnedZombies = _unit getVariable ["spawnedZombies", []];
 	{ deleteVehicle _x; } foreach _spawnedZombies;
