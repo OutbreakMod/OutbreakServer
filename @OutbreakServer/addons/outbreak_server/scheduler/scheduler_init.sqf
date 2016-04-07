@@ -54,12 +54,16 @@ _scheduleArray spawn {
 					
 						for "_i" from 0 to (count _cleanUp) - 1 do { 
 							
-							_itemDespawn = _cleanUp select _i;
-							_itemType = _itemDespawn getVariable ["spawnType", ""];
+							_itemDespawn = _cleanUp select _i;	
 							
-							if (_execute == _itemType) then {
-								_itemDespawn call scheduler_despawn;
-								_cleanUp = _cleanUp - [_itemDespawn];
+							if (!isNil "_itemDespawn") then {
+							
+								_itemType = _itemDespawn getVariable ["spawnType", ""];
+								
+								if (_execute == _itemType) then {
+									_itemDespawn call scheduler_despawn;
+									_cleanUp = _cleanUp - [_itemDespawn];
+								};
 							};
 						};
 					};

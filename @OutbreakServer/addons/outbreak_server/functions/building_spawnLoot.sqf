@@ -98,7 +98,7 @@ if (_posAmount > 0) then {
 						_lootPos = _this modelToWorld _lootPos;
 					};
 	
-					diag_log format ["Spawned item: %1 at building: %2 with items: %3", _itemClass, _className, _buildingLoot];
+					//diag_log format ["Spawned item: %1 at building: %2 with items: %3", _itemClass, _className, _buildingLoot];
 					
 					// flush loot every whatever respawn time is chosen
 					_this setVariable ["loottimer", serverTime + (_lootRespawn), true];

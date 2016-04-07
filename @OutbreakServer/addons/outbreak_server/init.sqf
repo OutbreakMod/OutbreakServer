@@ -23,7 +23,7 @@ if (_isConnected) then {
 
 	diag_log format["HIVE: Connecting to MySQL was successful"];
 
-	[] execVM "addons\outbreak_server\variables.sqf";
+	//[] execVM "addons\outbreak_server\variables.sqf";
 	[] execVM "addons\outbreak_server\public_variables.sqf";
 	[] execVM "addons\outbreak_server\init\server_init.sqf";
 	

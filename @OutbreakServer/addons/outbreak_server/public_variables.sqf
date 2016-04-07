@@ -119,7 +119,7 @@
 	[_agent] call fnc_zombie;
 };
 
-"server_cleanUp" addPublicVariableEventHandler {
+"server_cleanup" addPublicVariableEventHandler {
 	
 	_packet = _this select 1;
 	

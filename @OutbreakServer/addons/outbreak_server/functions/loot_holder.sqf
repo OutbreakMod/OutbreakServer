@@ -101,13 +101,13 @@ if (_itemType == "item") then {
 			
 			if ((random 1) < (_item select 2) && ((_item select 1) == _itemType)) then { 
 				_weaponHolder addItemCargoGlobal [(_item select 0), 1];
-				diag_log format ["Spawned item: %1 at building: %2", (_item select 0), _buildingClass];
+				//diag_log format ["Spawned item: %1 at building: %2", (_item select 0), _buildingClass];
 				_current = _current + 1;
 			};
 			
 			if ((random 1) < (_item select 2) && ((_item select 1) == "magazine")) then { 
 				_weaponHolder addMagazineCargoGlobal [(_item select 0), 1];
-				diag_log format ["Spawned item: %1 at building: %2", (_item select 0), _buildingClass];
+				//diag_log format ["Spawned item: %1 at building: %2", (_item select 0), _buildingClass];
 				_current = _current + 1;
 			};
 		};
