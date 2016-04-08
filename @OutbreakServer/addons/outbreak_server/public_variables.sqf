@@ -89,7 +89,7 @@
 					_spawnMaxRadius = 8;
 					
 					_zombiePosition = [(position _building), (random _spawnMaxRadius) + _spawnMinRadius, random 360] call BIS_fnc_relPos;
-					[[_zombiePosition, _building], false] call zombie_initialize;
+					[[_zombiePosition, _building], false] call zombie_create;
 				};
 				
 				_building setVariable ["helicrashSpawnZeds", false, true];
@@ -125,5 +125,8 @@
 	_timeToDespawn = _packet select 1;
 	
 	_vehicle setVariable ["cleanupTime", _timeToDespawn];
-	CLEANUP_ARRAY = CLEANUP_ARRAY + [_vehicle];
+	
+	if (!(_vehicle in CLEANUP_ARRAY)) then {
+		CLEANUP_ARRAY = CLEANUP_ARRAY + [_vehicle];
+	};
 };
