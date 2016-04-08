@@ -4,23 +4,28 @@
 */
 
 _player = _this select 0;
+_playerID = owner _player;
+
 _uuid = getPlayerUID _player;
 
 _exists = ["users", "uuid", _uuid] call hive_exists;
 
 if (_exists) then {
 
-	_userData = _player call hive_get_user;
+	_data = _player call hive_get_user;
 	
-	waitUntil {!isNil "_userData"};
+	waitUntil {!isNil "_data"};
 
-	_inventory = _userData select 2;
+	_inventory = (_data select 2);
 	_inventory = call compile(toString _inventory);		
-
-	[_player, ["gear", _inventory]] call server_clientCommand;
-	[_player, ["tp", _userData select 3]] call server_clientCommand;
-	[_player, ["medical", _userData select 4]] call server_clientCommand;
-	[_player, ["login"]] call server_clientCommand;
+	
+	_position = _data select 3;
+	_medical = _data select 4;
+	
+	[_inventory] remoteExecCall ["remoteExec_gear", _playerID];
+	[_medical] remoteExecCall ["remoteExec_medical", _playerID];
+	[_position] remoteExecCall ["remoteExec_teleport", _playerID];
+	[_player] remoteExecCall ["remoteExec_login", _playerID];
 	
 	if (_name != "Error: No unit") then {
 		["users", "name", _name, "uuid", _uuid] call hive_write;
@@ -30,6 +35,6 @@ if (_exists) then {
 	
 	_player call hive_new_user;
 	
-	[_player, ["findspawn"]] call server_clientCommand;
-	[_player, ["login"]] call server_clientCommand;
+	[_player] remoteExecCall ["remoteExec_find_spawn", _playerID];
+	[_player] remoteExecCall ["remoteExec_login", _playerID];
 };
