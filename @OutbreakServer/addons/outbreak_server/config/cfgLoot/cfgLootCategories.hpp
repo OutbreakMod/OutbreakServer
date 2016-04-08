@@ -72,6 +72,7 @@ class CfgLootCategories {
 			{"CUP_optic_PSO_1", "item",0.01},
 			{"CUP_optic_GOSHAWK", "item",0.01},
 			{"CUP_optic_NSPU","item",0.01},
+			{"CUP_muzzle_PBS4","item",0.01}
 			{"optic_Holosight","item",0.01},
 			{"optic_Aco","item",0.01},
 			{"optic_MRCO","item",0.01},

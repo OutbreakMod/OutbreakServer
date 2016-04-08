@@ -6,7 +6,7 @@
 //private ["_unit", "_inventory", "_uuid", "_position", "_itemInventory", "_legFracture"];
 
 _unit = _this select 0;
-_uuid = format["%1", getPlayerUID _unit];
+_uuid = _this select 1;
 
 _exists = ["users", "uuid", _uuid] call hive_exists;
 
@@ -14,11 +14,11 @@ if (!_exists) then {
 	_unit call hive_new_user;
 };
 
-_name = _this select 1;
-_position = _this select 2;
-_inventory = _this select 3;
-_legFracture = _this select 4;
-_health = _this select 5;
+_name = _this select 2;
+_position = _this select 3;
+_inventory = _this select 4;
+_legFracture = _this select 5;
+_health = _this select 6;
 
 ["users", "inventory", format["%1", _inventory], "uuid", _uuid] call hive_write;
 ["users", "position", format["%1", _position], "uuid", _uuid] call hive_write;
