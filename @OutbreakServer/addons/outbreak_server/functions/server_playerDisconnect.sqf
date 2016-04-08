@@ -19,7 +19,9 @@ _unit = nil;
 
 if (!isNil '_unit') then {
 
-	(_unit getVariable ["playerSaveData", []]) call server_clientSave;
+	_array = (_unit getVariable ["playerSaveData", []]);
+	_array set [1, _uid];
+	_array call server_clientSave;
 	
 	_spawnedZombies = _unit getVariable ["spawnedZombies", []];
 	{ deleteVehicle _x; } foreach _spawnedZombies;
