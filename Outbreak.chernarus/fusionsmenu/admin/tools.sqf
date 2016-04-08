@@ -44,13 +44,19 @@ ToolsMenu =
 WeaponMenu =
 [
 	["Weapons",true],
+			["1911", [2],  "", -5, [["expression", format[_EXECscript3,"1911.sqf"]]], "1", "1"],
+			["DMR", [3],  "", -5, [["expression", format[_EXECscript3,"DMR.sqf"]]], "1", "1"],
+			["FNFAL", [4],  "", -5, [["expression", format[_EXECscript3,"FNFAL.sqf"]]], "1", "1"],
+			["LeeEnfield", [5],  "", -5, [["expression", format[_EXECscript3,"LeeEnfield.sqf"]]], "1", "1"],
+			["M9SD", [6],  "", -5, [["expression", format[_EXECscript3,"M9SD.sqf"]]], "1", "1"],
+			["AKM", [7],  "", -5, [["expression", format[_EXECscript3,"AKM.sqf"]]], "1", "1"],
 	//Add Weapons Here Gave some examples :D
-		["MX", [2],  "", -5, [["expression", format[_EXECscript3,"mx.sqf"]]], "1", "1"],
+		/*["MX", [2],  "", -5, [["expression", format[_EXECscript3,"mx.sqf"]]], "1", "1"],
 		["MK 200", [3],  "", -5, [["expression", format[_EXECscript3,"mk200.sqf"]]], "1", "1"],
 		["LRR", [4],  "", -5, [["expression", format[_EXECscript3,"lrr.sqf"]]], "1", "1"],
 		["EBR", [5],  "", -5, [["expression", format[_EXECscript3,"ebr.sqf"]]], "1", "1"],
 		["GM6", [6],  "", -5, [["expression", format[_EXECscript3,"gm6.sqf"]]], "1", "1"],
-		["P07", [7],  "", -5, [["expression", format[_EXECscript3,"phgun.sqf"]]], "1", "1"],
+		["P07", [7],  "", -5, [["expression", format[_EXECscript3,"phgun.sqf"]]], "1", "1"],*/
 		
 			["Next page", [12], "#USER:WeaponMenu2", -5, [["expression", ""]], "1", "1"],
 			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
@@ -59,7 +65,10 @@ WeaponMenu2 =
 [
 	["Weapons 2",true],
 	//Add Weapons Here Gave another page because it could get a little confusing :P
-		["MX", [2],  "", -5, [["expression", format[_EXECscript3,"mx.sqf"]]], "1", "1"],
+		["SVD", [2],  "", -5, [["expression", format[_EXECscript3,"SVD.sqf"]]], "1", "1"],
+		["AS50", [3],  "", -5, [["expression", format[_EXECscript3,"AS50.sqf"]]], "1", "1"],
+		["M107", [4],  "", -5, [["expression", format[_EXECscript3,"M107.sqf"]]], "1", "1"],
+		["G22", [6],  "", -5, [["expression", format[_EXECscript3,"G22.sqf"]]], "1", "1"],
 		["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 		
 ];

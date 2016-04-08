@@ -72,6 +72,7 @@ class CfgLootCategories {
 			{"CUP_optic_PSO_1", "item",0.01},
 			{"CUP_optic_GOSHAWK", "item",0.01},
 			{"CUP_optic_NSPU","item",0.01},
+			{"CUP_muzzle_PBS4","item",0.01},
 			{"optic_Holosight","item",0.01},
 			{"optic_Aco","item",0.01},
 			{"optic_MRCO","item",0.01},
@@ -133,7 +134,7 @@ class CfgLootCategories {
 	class MedicalGeneral {
 		
 		loot[] = {
-			{"MedicalBox","supplybox",0.04}
+			{"MOD_MedicalBox","supplybox",0.04}
 		};
 	};
 	
@@ -214,7 +215,7 @@ class CfgLootCategories {
 			{"CUP_srifle_CZ550", "gun",0.03},
 			{"CUP_sgun_Saiga12K","gun",0.04},
 			{"CUP_srifle_LeeEnfield", "gun",0.06},
-			{"WoodPileBox","supplybox",0.1},
+			{"MOD_WoodPileBox","supplybox",0.1},
 			{"carrot", "item",0.05},
 			{"potato", "item",0.05}
 		};

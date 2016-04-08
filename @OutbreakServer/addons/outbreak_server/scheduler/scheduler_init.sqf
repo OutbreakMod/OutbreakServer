@@ -54,12 +54,16 @@ _scheduleArray spawn {
 					
 						for "_i" from 0 to (count _cleanUp) - 1 do { 
 							
-							_itemDespawn = _cleanUp select _i;
-							_itemType = _itemDespawn getVariable ["spawnType", ""];
+							_itemDespawn = _cleanUp select _i;	
 							
-							if (_execute == _itemType) then {
-								_itemDespawn call scheduler_despawn;
-								_cleanUp = _cleanUp - [_itemDespawn];
+							if (!isNil "_itemDespawn") then {
+							
+								_itemType = _itemDespawn getVariable ["spawnType", ""];
+								
+								if (_execute == _itemType) then {
+									_itemDespawn call scheduler_despawn;
+									_cleanUp = _cleanUp - [_itemDespawn];
+								};
 							};
 						};
 					};
@@ -70,6 +74,22 @@ _scheduleArray spawn {
 			};
 			
 		} foreach _this;
+		
+		////////////
+		/// Clean up functions
+		////////////
+		{
+			_object = _x;
+			_time = _object getVariable ["cleanupTime", 0];
+
+			if (_time > 0) then {
+				_object setVariable ["cleanupTime", (_time - 1)]
+			} else {
+				deleteVehicle (_object);
+				CLEANUP_ARRAY = CLEANUP_ARRAY - [_object];
+			};
+
+		} foreach CLEANUP_ARRAY;
 		
 		sleep 1;
 		_tick = _tick + 1;
