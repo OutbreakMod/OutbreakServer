@@ -23,6 +23,17 @@ if (!isNil '_unit') then {
 	_array set [1, _uid];
 	_array call server_clientSave;
 	
+	_pos = getPosATL _unit;
+	
+	_attackingZombies = _unit getVariable ["attackingZombies", []];
+	{ 
+		_x setVariable ["zombieTarget", _x, true];
+		_x setVariable ["zombieSpawned", _pos, true];
+		_x setVariable ["zombieTimerGunshot", 0, true]; // Trigger gunshot reset
+	} foreach _attackingZombies;
+	
+	_unit setVariable ["attackingZombies", [], true];
+	
 	_spawnedZombies = _unit getVariable ["spawnedZombies", []];
 	{ deleteVehicle _x; } foreach _spawnedZombies;
 	

@@ -1,5 +1,5 @@
 /*
-	Adds a vehicle object (and time in seconds given) to despawn, useless for body clean up
+	Adds a vehicle object (and time in seconds given) to despawn, useful for body clean up
 	@author: TheAmazingAussie
 */
 
