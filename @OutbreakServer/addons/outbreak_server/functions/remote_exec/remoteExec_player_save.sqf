@@ -3,5 +3,4 @@
 	@author: TheAmazingAussie
 */
 
-_array = _this select 0;
-_array call server_clientSave;
+_this call server_clientSave;
