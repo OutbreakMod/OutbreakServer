@@ -1,8 +1,7 @@
 /*
-	Function for player sending request to server to log themselves into the server
+	Create a new object vehicle in the database
 	@author: TheAmazingAussie
 */
-
 
 _player = _this select 0;
 _vehicle = _this select 1;

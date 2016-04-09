@@ -1,3 +1,7 @@
+/*
+	Adds a vehicle object (and time in seconds given) to despawn, useless for body clean up
+	@author: TheAmazingAussie
+*/
 
 _vehicle = _this select 0;
 _timeToDespawn = _this select 1;

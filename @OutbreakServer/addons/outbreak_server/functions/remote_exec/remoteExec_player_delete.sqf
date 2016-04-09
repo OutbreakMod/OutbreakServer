@@ -1,5 +1,5 @@
 /*
-	Function for player sending request to server to log themselves into the server
+	Deletes player from hive, if the player is deleted while they're still connected, it will reinsert their data into the database
 	@author: TheAmazingAussie
 */
 

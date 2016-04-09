@@ -1,5 +1,5 @@
 /*
-	Function for player sending request to server to log themselves into the server
+	Sync player data with server
 	@author: TheAmazingAussie
 */
 

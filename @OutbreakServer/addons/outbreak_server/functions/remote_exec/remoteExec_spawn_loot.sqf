@@ -1,8 +1,7 @@
 /*
-	Function for player sending request to server to log themselves into the server
+	Spawn loot inside buildings based on a timer and spawn zombies around helicopter crash sites
 	@author: TheAmazingAussie
 */
-
 
 _building = _this select 0;
 
