@@ -24,3 +24,11 @@ loot_holder = compile preProcessFileLineNumbers "addons\outbreak_server\function
 
 // vehicles
 vehicle_damage = compile preProcessFileLineNumbers "addons\outbreak_server\functions\vehicle_damage.sqf";
+
+// remote exc functions
+remoteExec_add_cleanup = compile preProcessFileLineNumbers "addons\outbreak_server\functions\remote_exec\remoteExec_add_cleanup.sqf";
+remoteExec_new_object = compile preProcessFileLineNumbers "addons\outbreak_server\functions\remote_exec\remoteExec_new_object.sqf";
+remoteExec_player_delete = compile preProcessFileLineNumbers "addons\outbreak_server\functions\remote_exec\remoteExec_player_delete.sqf";
+remoteExec_player_login = compile preProcessFileLineNumbers "addons\outbreak_server\functions\remote_exec\remoteExec_player_login.sqf";
+remoteExec_player_save = compile preProcessFileLineNumbers "addons\outbreak_server\functions\remote_exec\remoteExec_player_save.sqf";
+remoteExec_spawn_loot = compile preProcessFileLineNumbers "addons\outbreak_server\functions\remote_exec\remoteExec_spawn_loot.sqf";
