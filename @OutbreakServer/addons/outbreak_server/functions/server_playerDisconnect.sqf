@@ -29,6 +29,7 @@ if (!isNil '_unit') then {
 	{ 
 		_x setVariable ["zombieTarget", _x, true];
 		_x setVariable ["zombieSpawned", _pos, true];
+		_x setVariable ["zombieTimerGunshot", 0, true]; // Trigger gunshot reset
 	} foreach _attackingZombies;
 	
 	_unit setVariable ["attackingZombies", [], true];
