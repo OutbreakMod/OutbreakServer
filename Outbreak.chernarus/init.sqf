@@ -23,7 +23,7 @@ call compile preprocessFileLineNumbers "addons\outbreak_code\init.sqf";
 player_missionSpawn = {
 	player addWeapon "ItemMap";
 	
-	_clothes = getArray (configFile >> "CfgZombies" >> "CfgClothes" >> "civilian");
+	_clothes = getArray (configFile >> "CfgZombies" >> "CfgClothes" >> "new_player");
 	player addUniform (_clothes call BIS_fnc_selectRandom);	
 };
 

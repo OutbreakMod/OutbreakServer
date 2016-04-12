@@ -240,7 +240,7 @@ class CfgLootCategories {
 		loot[] = {
 			{"axe","single", 0.09},
 			{"jerrycan","single", 0.08},
-			{"cartyre","single", 0.06},
+			{"tire","single", 0.06},
 			{"hammer","single", 0.09},
 			{"toolbox","single", 0.06},
 			{"scrap","item", 0.06}

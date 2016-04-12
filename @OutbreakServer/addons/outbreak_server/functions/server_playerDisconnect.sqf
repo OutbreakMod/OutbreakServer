@@ -35,7 +35,7 @@ if (!isNil '_unit') then {
 	_unit setVariable ["attackingZombies", [], true];
 	
 	_spawnedZombies = _unit getVariable ["spawnedZombies", []];
-	{ deleteVehicle _x; } foreach _spawnedZombies;
+	{ if (alive _x) then { deleteVehicle _x; }; } foreach _spawnedZombies;
 	
 	deleteVehicle (_unit);
 };

@@ -57,21 +57,21 @@ for "_i" from 0 to (count _sections) - 1 do {
 };
 
 // create worldspace
-_worldspace = [_location, vectorDir _veh, vectorUp _veh];
+_worldspace = [_location, _dir, vectorDir _veh, vectorUp _veh];
 
 _fuel = fuel _veh;
 _damage = damage _veh;
 
 _veh setPos (_worldspace select 0);
-_veh setDir _dir;
-_veh setVectorDir (_worldspace select 1);
-_veh setVectorUp (_worldspace select 2);
+_veh setDir (_worldspace select 1);
+_veh setVectorDir (_worldspace select 2);
+_veh setVectorUp (_worldspace select 3);
 
 _objectID = _location call create_uid;
 _veh setVariable ["ObjectID", _objectID, true];
 
 // insert into db
-_update = format["NewObject, 'DEV001','%1','%2','%3','%4','%5','%6','%7','%8'", _objectID, _class, _worldspace, _dir, "", _savedHitPoints, _fuel, _damage];
+_update = format["NewObject, 'DEV001','%1','%2','%3','%4','%5','%6','%7'", _objectID, _class, _worldspace, "", _savedHitPoints, _fuel, _damage];
 _response = [_update] call hive_static;
 
 _veh

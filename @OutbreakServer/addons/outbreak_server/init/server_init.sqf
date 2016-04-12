@@ -88,27 +88,25 @@ for "_i" from 0 to (count _objects) - 1 do {
 
 	_obj = _objects select _i;
 	
+	_id = _obj select 0;
 	_class = _obj select 1;
 	_worldspace = _obj select 2;
-	_dir = _obj select 3;
+	_inventory = _obj select 3;
+	_hitpoints = _obj select 4;
+	_fuel = _obj select 5;
+	_damage = _obj select 6;
 	
 	_veh = createVehicle [_class, (_worldspace select 0), [], 0, "CAN_COLLIDE"];
 	_veh setPos (_worldspace select 0);
-	_veh setDir _dir;
-	_veh setVectorDir (_worldspace select 1);
-	_veh setVectorUp (_worldspace select 2);
-	_veh setVariable ["ObjectID", _obj select 0, true];
+	_veh setDir (_worldspace select 1);
+	_veh setVectorDir (_worldspace select 2);
+	_veh setVectorUp (_worldspace select 3);
+	_veh setVariable ["ObjectID", _id, true];
 
-	// add items from db into object
-	[_veh, (_obj select 4)] call server_objectAddInventory;
+	[_veh, _inventory] call server_objectAddInventory;
 	
-	_damage = _obj select 7;
 	_veh setDamage _damage;
-	
-	_fuel = _obj select 6;
 	_veh setFuel _fuel;
-	
-	_hitpoints = _obj select 5;
 	
 	{
 		_hit = _x select 0;
