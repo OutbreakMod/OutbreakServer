@@ -55,12 +55,11 @@ for "_i" from 0 to (count _storageObjects) - 1 do {
 	} forEach _sections;
 	
 	_pos = getPos _vehicle;
-	_worldSpace = [_pos, vectorDir _vehicle, vectorUp _vehicle];
-	_dir = round (getDir _vehicle);
+	_worldSpace = [_pos, vectorDir _vehicle, vectorUp _vehicle, (round direction _vehicle)];
 	_fuel = fuel _vehicle;
 	_damage = getDammage _vehicle;
 
-	_update = format["UpdateObject, '%1','%2','%3','%4','%5','%6','%7'", _id, _itemInventory, _savedHitPoints, _worldSpace, _dir,_fuel,_damage];
+	_update = format["UpdateObject, '%1','%2','%3','%4','%5','%6'", _id, _itemInventory, _savedHitPoints, _worldSpace, _dir,_fuel,_damage];
 	[_update] call hive_static;
 	
 };
