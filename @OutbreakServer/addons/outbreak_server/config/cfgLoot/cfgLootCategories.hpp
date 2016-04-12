@@ -161,14 +161,15 @@ class CfgLootCategories {
 	class Supermarket {
 		
 		loot[] = {
-			{"twinkies", "item",0.02},
-			{"snoballs", "item",0.02},
+			//{"twinkies", "item",0.02},
+			//{"snoballs", "item",0.02},
 			{"energy_drink", "item",0.06},
 			{"cereal", "item",0.06},
-			{"candybar", "item",0.03},
+			{"tacticalbacon", "item",0.03},
 			{"soda", "item",0.06},
 			{"orangedrink", "item",0.06},
 			{"chips", "item", 0.01},
+			{"rice", "item", 0.03},
 			{"cannedfood","item", 0.05}
 		};
 	};
@@ -182,6 +183,7 @@ class CfgLootCategories {
 			{"soda", "item",0.04},
 			{"orangedrink", "item",0.04},
 			{"chips", "item", 0.03},
+			{"rice", "item", 0.02},
 			{"cannedfood","item", 0.06}
 		};
 	};
