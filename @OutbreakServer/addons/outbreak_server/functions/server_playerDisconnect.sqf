@@ -16,7 +16,7 @@ if (count _array > 0) then {
 _attackingZombies = _unit getVariable ["attackingZombies", []];
 { 
 	_x setVariable ["zombieTarget", _x, true];
-	_x setVariable ["zombieSpawned", _pos, true];
+	_x setVariable ["zombieSpawned", getPosAT; _unit , true];
 	_x setVariable ["zombieTimerGunshot", 0, true]; // Trigger gunshot reset
 } foreach _attackingZombies;
 
