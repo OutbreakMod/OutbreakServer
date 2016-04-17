@@ -26,7 +26,10 @@ if (_isConnected) then {
 	[] execVM "addons\outbreak_server\variables.sqf";
 	[] execVM "addons\outbreak_server\init\server_init.sqf";
 	
-	onPlayerDisconnected {[_uid,_name] spawn server_playerDisconnect;};
+	addMissionEventHandler ["HandleDisconnect", { 
+		[_this select 0] spawn server_playerDisconnect; 
+		false; 
+	}];
 	
 } else {
 	diag_log format["HIVE: Failed to connect to MySQL"];

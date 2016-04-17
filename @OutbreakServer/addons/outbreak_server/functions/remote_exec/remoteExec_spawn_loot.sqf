@@ -19,7 +19,7 @@ if (serverTime > _building getVariable ["loottimer", 0]) then {
 				_spawnMaxRadius = 8;
 				
 				_zombiePosition = [(position _building), (random _spawnMaxRadius) + _spawnMinRadius, random 360] call BIS_fnc_relPos;
-				[[_zombiePosition, _building], false] call zombie_create;
+				[[_zombiePosition, _building], false] spawn zombie_create;
 			};
 			
 			_building setVariable ["helicrashSpawnZeds", false, true];
@@ -33,6 +33,6 @@ if (serverTime > _building getVariable ["loottimer", 0]) then {
 		};
 		
 		_building setVariable ["lootarray", []];
-		_building call building_spawnLoot;
+		_building spawn building_spawnLoot;
 	};
 };
