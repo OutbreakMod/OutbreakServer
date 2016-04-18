@@ -71,6 +71,10 @@ if (_itemType == "magazine") then {
 
 	_amount = 0;
 	
+	if (_itemClass == "MOD_30Rnd_545x39") then {
+		_itemClass = selectRandom ["MOD_30Rnd_545x39_M", "MOD_30Rnd_545x39"];
+	}
+	
 	if ((random 1) < 0.50) then {
 		_amount = _amount + 1;
 		
