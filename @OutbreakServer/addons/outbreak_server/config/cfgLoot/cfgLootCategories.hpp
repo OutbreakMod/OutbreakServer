@@ -83,13 +83,12 @@ class CfgLootCategories {
 	class AssaultRifles {
 		
 		loot[] = {
-			{"CUP_arifle_AK74M","gun",0.03},
-			{"CUP_arifle_AKS74U","gun",0.05},
-			{"CUP_arifle_AK74","gun",0.07},
-			{"CUP_arifle_AKM","gun",0.03},
-			{"CUP_arifle_RPK74","gun",0.04},
+			{"MOD_AK74M","gun",0.03},
+			{"MOD_AKS74U","gun",0.05},
+			{"MOD_AK74","gun",0.07},
+			{"MOD_AKM","gun",0.03},
 			{"CUP_arifle_CZ805_A2","gun",0.01},
-			{"CUP_arifle_Sa58P","gun",0.03}
+			{"MOD_Sa58P","gun",0.03}
 		};
 	};
 	
@@ -267,8 +266,8 @@ class CfgLootCategories {
 			{"CUP_30Rnd_556x45_Stanag", "magazine",0.02},
 			{"20Rnd_762x51_FNFAL_M", "magazine",0.04},
 			{"CUP_10Rnd_127x99_m107","magazine",0.02},
-			{"CUP_30Rnd_762x39_AK47_M", "magazine",0.05},
-			{"CUP_30Rnd_545x39_AK_M", "magazine",0.06},
+			{"MOD_30Rnd_762x39", "magazine",0.05},
+			{"MOD_30Rnd_545x39", "magazine",0.06},
 			{"20Rnd_762x51_DMR", "magazine",0.03},
 			{"CUP_10Rnd_762x54_SVD_M","magazine",0.03},
 			{"CUP_5Rnd_762x67_G22","magazine",0.03}
