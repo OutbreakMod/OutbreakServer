@@ -73,7 +73,7 @@ if (_itemType == "magazine") then {
 	
 	if (_itemClass == "MOD_30Rnd_545x39") then {
 		_itemClass = selectRandom ["MOD_30Rnd_545x39_M", "MOD_30Rnd_545x39"];
-	}
+	};
 	
 	if ((random 1) < 0.50) then {
 		_amount = _amount + 1;
@@ -96,21 +96,32 @@ if (_itemType == "item") then {
 	_weaponHolder addItemCargoGlobal [_itemClass, 1];
 	
 	_current = 1;
-	_maxItems = _current + floor (random 2); // number giving possibily of more items into this holder. max = three, min = 1
 	
+	_maxItems = _current + floor (random 2); // number giving possibily of more items into this holder. max = three, min = 1
 	_objItems = _buildingClass call building_items;
+	
 	for "_j" from 0 to count (_objItems) - 1 do { 
 		if (_current <= _maxItems) then {
 			_item = _objItems select _i;
 			
-			if ((random 1) < (_item select 2) && ((_item select 1) == _itemType)) then { 
-				_weaponHolder addItemCargoGlobal [(_item select 0), 1];
+			//if ((random 1) < (_item select 2) && ((_item select 1) == _itemType)) then { 
+				//_weaponHolder addItemCargoGlobal [(_item select 0), 1];
 				//diag_log format ["Spawned item: %1 at building: %2", (_item select 0), _buildingClass];
-				_current = _current + 1;
-			};
+				//_current = _current + 1;
+			//};
 			
-			if ((random 1) < (_item select 2) && ((_item select 1) == "magazine")) then { 
-				_weaponHolder addMagazineCargoGlobal [(_item select 0), 1];
+			_extraItemClass = _item select 0;
+			_extraItemType = _item select 1;
+			_extraChance = _item select 2;
+			
+			if (random 1 < _extraChance) then { 
+			
+				if (_extraItemType == "magazine") then {
+					_weaponHolder addMagazineCargoGlobal [_extraItemClass, 1];
+				} else {
+					_weaponHolder addItemCargoGlobal [_extraItemClass, 1];
+				};
+				
 				//diag_log format ["Spawned item: %1 at building: %2", (_item select 0), _buildingClass];
 				_current = _current + 1;
 			};
