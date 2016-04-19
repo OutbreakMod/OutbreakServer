@@ -12,19 +12,22 @@ class Mission
 	randomSeed=13806625;
 	class Intel
 	{
-		timeOfChanges=1800.0002;
-		startWeather=0.25;
-		startWind=0.1;
-		startWaves=0.1;
-		forecastWeather=0.25;
-		forecastWind=0.1;
-		forecastWaves=0.1;
-		forecastLightnings=0.1;
-		year=2008;
-		month=10;
-		day=11;
-		hour=9;
-		minute=20;
+		briefingName="Outbreak Mod";
+		startWeather=0;
+		startWind=0.099999994;
+		startWaves=0.099999994;
+		forecastWeather=0;
+		forecastWind=0.099999994;
+		forecastWaves=0.099999994;
+		rainForced=1;
+		lightningsForced=1;
+		wavesForced=1;
+		windForced=1;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
 		startFogDecay=0.013;
 		forecastFogDecay=0.013;
 	};
@@ -1322,18 +1325,18 @@ class Intro
 	class Intel
 	{
 		timeOfChanges=1800.0002;
-		startWeather=0.25;
+		startWeather=0.30000001;
 		startWind=0.1;
 		startWaves=0.1;
-		forecastWeather=0.25;
+		forecastWeather=0.30000001;
 		forecastWind=0.1;
 		forecastWaves=0.1;
 		forecastLightnings=0.1;
-		year=2008;
-		month=10;
-		day=11;
-		hour=9;
-		minute=20;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
 		startFogDecay=0.013;
 		forecastFogDecay=0.013;
 	};
@@ -1352,18 +1355,18 @@ class OutroWin
 	class Intel
 	{
 		timeOfChanges=1800.0002;
-		startWeather=0.25;
+		startWeather=0.30000001;
 		startWind=0.1;
 		startWaves=0.1;
-		forecastWeather=0.25;
+		forecastWeather=0.30000001;
 		forecastWind=0.1;
 		forecastWaves=0.1;
 		forecastLightnings=0.1;
-		year=2008;
-		month=10;
-		day=11;
-		hour=9;
-		minute=20;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
 		startFogDecay=0.013;
 		forecastFogDecay=0.013;
 	};
@@ -1382,20 +1385,21 @@ class OutroLoose
 	class Intel
 	{
 		timeOfChanges=1800.0002;
-		startWeather=0.25;
+		startWeather=0.30000001;
 		startWind=0.1;
 		startWaves=0.1;
-		forecastWeather=0.25;
+		forecastWeather=0.30000001;
 		forecastWind=0.1;
 		forecastWaves=0.1;
 		forecastLightnings=0.1;
-		year=2008;
-		month=10;
-		day=11;
-		hour=9;
-		minute=20;
+		year=2035;
+		month=6;
+		day=24;
+		hour=12;
+		minute=0;
 		startFogDecay=0.013;
 		forecastFogDecay=0.013;
 	};
+};
 };
 

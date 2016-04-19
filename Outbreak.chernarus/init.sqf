@@ -11,6 +11,7 @@ call compile preprocessFileLineNumbers "addons\outbreak_code\compiles.sqf";
 
 if (isServer) then {
 	call compile preprocessFileLineNumbers "addons\outbreak_server\init.sqf";
+	[] spawn compile preProcessFileLineNumbers "real_weather.sqf";
 };
 
 if (isDedicated) exitWith {}; // CLIENT ONLY BELOW THIS LINE
