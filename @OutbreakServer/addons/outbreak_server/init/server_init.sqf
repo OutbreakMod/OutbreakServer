@@ -105,6 +105,9 @@ for "_i" from 0 to (count _objects) - 1 do {
 
 	[_veh, _inventory] call server_objectAddInventory;
 	
+	_lifetime = [_class] call object_lifetime;
+	diag_log format ["OBJECT LIFETIME (%1): %2", _class, _lifetime];
+	
 	_veh setDamage _damage;
 	_veh setFuel _fuel;
 	

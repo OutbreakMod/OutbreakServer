@@ -15,6 +15,7 @@ server_objectAddInventory = compile preProcessFileLineNumbers "addons\outbreak_s
 server_findSpawn = compile preProcessFileLineNumbers "addons\outbreak_server\functions\server_findSpawn.sqf";
 server_clientSave = compile preProcessFileLineNumbers "addons\outbreak_server\functions\server_clientSave.sqf";
 server_playerDisconnect = compile preProcessFileLineNumbers "addons\outbreak_server\functions\server_playerDisconnect.sqf";
+object_lifetime = compile preProcessFileLineNumbers "addons\outbreak_server\functions\object_lifetime.sqf";
 
 // building
 building_items = compile preProcessFileLineNumbers "addons\outbreak_server\functions\building_items.sqf";
