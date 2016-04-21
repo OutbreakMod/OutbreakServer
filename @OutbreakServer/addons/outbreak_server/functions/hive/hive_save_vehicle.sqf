@@ -42,5 +42,7 @@ _worldSpace = [_pos, vectorDir _vehicle, vectorUp _vehicle, (round direction _ve
 _fuel = fuel _vehicle;
 _damage = getDammage _vehicle;
 
+_lifetime = _vehicle getVariable ["ObjectLifetime", -1];
 
+_update = format["UpdateObject, '%1','%2','%3','%4','%5','%6','%7'", _id, _itemInventory, _savedHitPoints, _worldSpace, _fuel, _damage, _lifetime];
 [_update] call hive_static;
