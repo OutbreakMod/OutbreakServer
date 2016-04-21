@@ -1,5 +1,7 @@
 [] spawn {
 	
+	_i = 0;
+	
 	while {true} do {
 		
 		for "_i" from 0 to (count STORAGE_ARRAY) - 1 do {
@@ -20,11 +22,17 @@
 				};
 			};
 			
-			diag_log format ["Running save scheduler: %1", _vehicle];
-			[_vehicle] call hive_save_vehicle;
+			if (_i > 0) then {
+				if ((_i % 300) == 0) then {
+					diag_log format ["Running save scheduler: %1", _vehicle];
+					[_vehicle] call hive_save_vehicle;
+				};
+			};
 			
 		};
 		
-		sleep 10;
+		_i = _i + 1;
+		
+		sleep 1;
 	};
 };

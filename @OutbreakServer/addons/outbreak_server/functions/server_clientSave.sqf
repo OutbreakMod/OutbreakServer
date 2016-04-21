@@ -25,7 +25,7 @@ for "_i" from 0 to (count _storageObjects) - 1 do {
 	_vehicle = _storageObjects select _i;
 	_vehicle setVariable ["ObjectLifetime", ([typeOf _vehicle] call object_lifetime)];
 	
-	[_vehicle] call hive_save_vehicle;
+	//[_vehicle] call hive_save_vehicle;
 	
 };
 		
