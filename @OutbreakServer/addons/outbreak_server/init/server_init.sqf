@@ -95,6 +95,7 @@ for "_i" from 0 to (count _objects) - 1 do {
 	_hitpoints = _obj select 4;
 	_fuel = _obj select 5;
 	_damage = _obj select 6;
+	_lifetime = _obj select 7;
 	
 	_veh = createVehicle [_class, (_worldspace select 0), [], 0, "CAN_COLLIDE"];
 	_veh setPos (_worldspace select 0);
@@ -102,11 +103,9 @@ for "_i" from 0 to (count _objects) - 1 do {
 	_veh setVectorDir (_worldspace select 2);
 	_veh setVectorUp (_worldspace select 3);
 	_veh setVariable ["ObjectID", _id, true];
+	_veh setVariable ["ObjectLifetime", _lifetime];
 
 	[_veh, _inventory] call server_objectAddInventory;
-	
-	_lifetime = [_class] call object_lifetime;
-	diag_log format ["OBJECT LIFETIME (%1): %2", _class, _lifetime];
 	
 	_veh setDamage _damage;
 	_veh setFuel _fuel;
@@ -118,6 +117,8 @@ for "_i" from 0 to (count _objects) - 1 do {
 		_veh setHit [_hit, _dmg];
 		
 	} foreach _hitpoints;
+	
+	[_veh] call object_add_cleanup;
 	
 };
 
@@ -133,6 +134,9 @@ _scheduler = [
 ];
 
 [_scheduler] execVM "addons\outbreak_server\scheduler\scheduler_init.sqf";
+
+diag_log "Running cleanup thread";
+[] execVM "addons\outbreak_server\scheduler\cleanup_array.sqf";
 
 //diag_log "SERVER: Running clean up thread";
 //[] execVM "addons\outbreak_server\scheduler\cleanup.sqf";
