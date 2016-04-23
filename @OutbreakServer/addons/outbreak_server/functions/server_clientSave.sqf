@@ -13,10 +13,11 @@ _inventory = _this select 4;
 _legDamage = _this select 5;
 _health = _this select 6;
 _stomach = _this select 7;
+_thirst = _this select 8;
 
 ["users", "inventory", format["%1", _inventory], "uuid", _uuid] call hive_write;
 ["users", "position", format["%1", _position], "uuid", _uuid] call hive_write;
-["users", "medical", format["%1", [_legDamage, _health, _stomach]], "uuid", _uuid] call hive_write;
+["users", "medical", format["%1", [_legDamage, _health, _stomach, _thirst]], "uuid", _uuid] call hive_write;
 
 _storageObjects = nearestObjects [_position, STORAGE_UNITS, 20];
 
