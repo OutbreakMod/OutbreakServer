@@ -6,6 +6,7 @@ hive_delete = compile preProcessFileLineNumbers "addons\outbreak_server\function
 hive_config = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_config.sqf";
 hive_static = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_static.sqf";
 hive_new_vehicle = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_new_vehicle.sqf";
+hive_save_vehicle = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_save_vehicle.sqf";
 hive_new_user = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_new_user.sqf";
 hive_get_user = compile preProcessFileLineNumbers "addons\outbreak_server\functions\hive\hive_get_user.sqf";
 
@@ -15,6 +16,8 @@ server_objectAddInventory = compile preProcessFileLineNumbers "addons\outbreak_s
 server_findSpawn = compile preProcessFileLineNumbers "addons\outbreak_server\functions\server_findSpawn.sqf";
 server_clientSave = compile preProcessFileLineNumbers "addons\outbreak_server\functions\server_clientSave.sqf";
 server_playerDisconnect = compile preProcessFileLineNumbers "addons\outbreak_server\functions\server_playerDisconnect.sqf";
+object_lifetime = compile preProcessFileLineNumbers "addons\outbreak_server\functions\object_lifetime.sqf";
+object_add_cleanup = compile preProcessFileLineNumbers "addons\outbreak_server\functions\object_add_cleanup.sqf";
 
 // building
 building_items = compile preProcessFileLineNumbers "addons\outbreak_server\functions\building_items.sqf";

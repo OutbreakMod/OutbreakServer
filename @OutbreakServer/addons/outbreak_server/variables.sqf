@@ -1,1 +1,2 @@
 CLEANUP_ARRAY = [];
+STORAGE_ARRAY = [];

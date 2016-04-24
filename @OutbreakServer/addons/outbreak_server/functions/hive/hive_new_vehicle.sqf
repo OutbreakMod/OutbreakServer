@@ -67,11 +67,18 @@ _veh setDir (_worldspace select 1);
 _veh setVectorDir (_worldspace select 2);
 _veh setVectorUp (_worldspace select 3);
 
+_lifetime = [_class] call object_lifetime;
+
 _objectID = _location call create_uid;
 _veh setVariable ["ObjectID", _objectID, true];
+_veh setVariable ["ObjectLifetime", _lifetime, true];
 
 // insert into db
-_update = format["NewObject, 'DEV001','%1','%2','%3','%4','%5','%6','%7'", _objectID, _class, _worldspace, "", _savedHitPoints, _fuel, _damage];
+_update = format["NewObject, 'DEV001','%1','%2','%3','%4','%5','%6','%7','%8'", _objectID, _class, _worldspace, "", _savedHitPoints, _fuel, _damage, _lifetime];
 _response = [_update] call hive_static;
+
+if (!(count _this > 2)) then {
+	[_veh] call object_add_cleanup;
+};
 
 _veh
