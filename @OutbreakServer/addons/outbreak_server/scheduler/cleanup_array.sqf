@@ -18,6 +18,7 @@
 				
 				if (_lifetime == 0) then {
 					STORAGE_ARRAY = STORAGE_ARRAY - [_vehicle];
+					diag_log format ["Deleting vehicle: %1", _vehicle];
 					deleteVehicle _vehicle;
 				};
 			};

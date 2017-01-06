@@ -6,8 +6,8 @@
 _vehicle = _this select 0;
 _timeToDespawn = _this select 1;
 
-_vehicle setVariable ["cleanupTime", _timeToDespawn];
+_vehicle setVariable ["ObjectLifetime", _timeToDespawn];
 
-if (!(_vehicle in CLEANUP_ARRAY)) then {
-	CLEANUP_ARRAY = CLEANUP_ARRAY + [_vehicle];
+if (!(_vehicle in STORAGE_ARRAY)) then {
+	STORAGE_ARRAY = STORAGE_ARRAY + [_vehicle];
 };
