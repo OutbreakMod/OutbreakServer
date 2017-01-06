@@ -38,7 +38,7 @@ _savedHitPoints = [];
 
 _pos = getPos _vehicle;
 _dir = getDir _vehicle;
-_worldSpace = [_pos, vectorDir _vehicle, vectorUp _vehicle, (round direction _vehicle)];
+_worldSpace = [_pos, (round direction _vehicle), vectorDir _vehicle, vectorUp _vehicle];
 _fuel = fuel _vehicle;
 _damage = getDammage _vehicle;
 
