@@ -3,12 +3,10 @@ class Land_SS_hangar : Default {
 	lootMin = 1;
 	lootCategories[] = 
 	{
-		"GeneralTools", 
-		"AssaultRifles", 
 		"MilitaryTools", 
-		"CivillianBackpacks",
+		"AssaultRifles", 
 		"MilitaryPistols",
-		"Industrial", 
+		"Medical", 
 		"Magazines", 
 		"SubmachineGuns", 
 		"Attachments"
@@ -21,13 +19,12 @@ class Land_Mil_Barracks_i : Default {
 	zombieClothes = "military";
 	lootMin = 4;
 	lootCategories[] = {
-		"GeneralTools", 
 		"MilitaryTools", 
 		"AssaultRifles", 
-		"SniperRifles",
+		"MilitaryPistols",
+		"Medical", 
 		"Magazines", 
 		"SubmachineGuns", 
-		"Barracks", 
 		"Attachments"
 	};
 	positions[] = {{4.56494,-2.67383,-1.14822},{0.312988,1.54492,-1.09824},{-2.95361,1.49414,-1.11823},{-3.39111,-1.99023,-0.708221},{-6.68604,-1,0.0917664},{-8.94238,-2.52441,-1.09824},{-0.59668,-1.49609,-1.10825},{3.03467,-1.00586,0.0917664},{-0.214355,-2.19531,0.0917664},{-8.93018,1.53906,-1.09824}};
@@ -38,10 +35,10 @@ class Land_Mil_ControlTower : Default {
 	zombieClothes = "military";
 	lootMin = 2;
 	lootCategories[] = {
-		"GeneralTools", 
 		"MilitaryTools", 
 		"AssaultRifles", 
-		"MilitaryPistols", 
+		"MilitaryPistols",
+		"Medical", 
 		"Magazines", 
 		"SubmachineGuns", 
 		"Attachments"
@@ -55,12 +52,10 @@ class CampEast_EP1 : Default {
 	lootMin = 0;
 	lootCategories[] = 
 	{
-		"GeneralTools", 
 		"MilitaryTools", 
 		"AssaultRifles", 
 		"MilitaryPistols", 
 		"Medical", 
-		"CivillianFoodStorage",
 		"Magazines", 
 		"SubmachineGuns", 
 		"Attachments"
@@ -74,12 +69,10 @@ class CampEast : Default {
 	lootMin = 0;
 	lootCategories[] = 
 	{
-		"GeneralTools", 
 		"MilitaryTools", 
 		"AssaultRifles", 
 		"MilitaryPistols",
 		"Medical", 
-		"CivillianFoodStorage",
 		"Magazines", 
 		"SubmachineGuns", 
 		"Attachments"
@@ -93,12 +86,10 @@ class Land_tent_east : Default {
 	lootMin = 0;
 	lootCategories[] = 
 	{
-		"GeneralTools", 
 		"MilitaryTools", 
 		"AssaultRifles", 
 		"MilitaryPistols",
 		"Medical", 
-		"CivillianFoodStorage",
 		"Magazines", 
 		"SubmachineGuns", 
 		"Attachments"
@@ -112,11 +103,8 @@ class Land_Mil_Guardhouse: Default {
 	lootMin = 0;
 	lootCategories[] = 
 	{
-		"GeneralTools", 
 		"AssaultRifles", 
 		"MilitaryPistols",
-		"Medical", 
-		"CivillianFoodStorage",
 		"Magazines", 
 		"Attachments"
 	};
