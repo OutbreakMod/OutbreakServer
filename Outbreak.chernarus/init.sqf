@@ -13,7 +13,7 @@ if (isServer) then {
 	call compile preprocessFileLineNumbers "addons\outbreak_server\init.sqf";
 };
 
-[] execVM "real_weather.sqf";
+[] execVM "addons\outbreak_code\weather\real_weather.sqf";
 
 if (isDedicated) exitWith {}; // CLIENT ONLY BELOW THIS LINE
 waitUntil {!isNull player};
