@@ -3,6 +3,8 @@
 	@author: TheAmazingAussie
 */
 
+private ["_vehicle", "_id", "_type", "_hitPoints", "_savedHitPoints"];
+
 _vehicle = _this select 0;
 
 _itemInventory = [
@@ -12,11 +14,11 @@ _itemInventory = [
 	getItemCargo _vehicle
 ];
 
-_id = _vehicle getVariable ["ObjectID", 0];
+_id = _vehicle getVariable ["ObjectID", "0"];
 
-if (_id == 0) then {
+if (_id == "0") then {
 	[_vehicle] call hive_new_vehicle;
-	_id = _vehicle getVariable ["ObjectID", 0];
+	_id = _vehicle getVariable ["ObjectID", "0"];
 };
 
 _type = typeOf _vehicle;
@@ -24,7 +26,6 @@ _hitPoints = (count (configFile >> "CfgVehicles" >> _type >> "HitPoints")) - 1;
 _sections = [];
 
 for "_i" from 0 to _hitPoints do {
-
 	_selected = (configFile >> "CfgVehicles" >> _type >> "HitPoints") select _i;
 	_selectedName = getText(_selected >> "name");
 	_sections = _sections + [_selectedName];
