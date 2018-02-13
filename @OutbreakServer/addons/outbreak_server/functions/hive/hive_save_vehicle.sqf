@@ -3,7 +3,7 @@
 	@author: TheAmazingAussie
 */
 
-private ["_vehicle", "_id", "_type", "_hitPoints", "_savedHitPoints"];
+private ["_vehicle", "_objectID", "_type", "_hitPoints", "_savedHitPoints"];
 
 _vehicle = _this select 0;
 
@@ -14,12 +14,13 @@ _itemInventory = [
 	getItemCargo _vehicle
 ];
 
-_id = _vehicle getVariable ["ObjectID", "0"];
+_objectID = _vehicle getVariable ["ObjectID", "0"];
 
-if (_id == "0") then {
+if (isNil {_vehicle getVariable "ObjectID"}) then {
 	[_vehicle] call hive_new_vehicle;
-	_id = _vehicle getVariable ["ObjectID", "0"];
+	_objectID = _vehicle getVariable ["ObjectID", "0"];
 };
+
 
 _type = typeOf _vehicle;
 _hitPoints = (count (configFile >> "CfgVehicles" >> _type >> "HitPoints")) - 1;
@@ -45,5 +46,5 @@ _damage = getDammage _vehicle;
 
 _lifetime = _vehicle getVariable ["ObjectLifetime", -1];
 
-_update = format["UpdateObject, '%1','%2','%3','%4','%5','%6','%7'", _id, _itemInventory, _savedHitPoints, _worldSpace, _fuel, _damage, _lifetime];
+_update = format["UpdateObject, '%1','%2','%3','%4','%5','%6','%7'", _objectID, _itemInventory, _savedHitPoints, _worldSpace, _fuel, _damage, _lifetime];
 [_update] call hive_static;
