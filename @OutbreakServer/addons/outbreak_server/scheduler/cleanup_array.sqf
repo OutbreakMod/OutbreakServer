@@ -23,13 +23,11 @@
 						};
 						
 						if (_lifetime > 0) then {
-							
 							_lifetime = _lifetime - 1;
 							_vehicle setVariable ["ObjectLifetime", _lifetime];
 						};
 							
 						if (_lifetime == 0) then {
-							
 							STORAGE_ARRAY = STORAGE_ARRAY - [_vehicle];
 							diag_log format ["Deleting vehicle: %1", typeOf _vehicle];
 							

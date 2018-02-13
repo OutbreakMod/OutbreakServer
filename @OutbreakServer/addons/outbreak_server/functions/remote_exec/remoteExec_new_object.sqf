@@ -15,6 +15,8 @@ _damage = damage _vehicle;
 _inventory = [];
 	
 _update = format["NewObject, '%1','%2','%3','%4','%5','%6','%7','%8','%9'", MOD_HIVE, _vehicle getVariable ["ObjectID", 0], _class, _worldspace, _inventory, _hitPoints, _fuel, _damage, _lifetime];
+
+_vehicle setVariable ["ObjectLifetime", _lifetime];
 	
 [_update] call hive_static;
-[_update] call object_add_cleanup;
+[_vehicle] call object_add_cleanup;
