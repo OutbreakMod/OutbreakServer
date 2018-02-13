@@ -99,7 +99,7 @@ for "_i" from 0 to (count _objects) - 1 do {
 	
 	_veh = createVehicle [_class, (_worldspace select 0), [], 0, "CAN_COLLIDE"];
 	_veh setPos (_worldspace select 0);
-		_veh setDir (_worldspace select 1);
+	_veh setDir (_worldspace select 1);
 	_veh setVectorDir (_worldspace select 2);
 	_veh setVectorUp (_worldspace select 3);
 	_veh setVariable ["ObjectID", _id, true];

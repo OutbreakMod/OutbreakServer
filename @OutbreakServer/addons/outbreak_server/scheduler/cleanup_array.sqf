@@ -3,9 +3,7 @@
 	_tick = 0;
 	
 	while {true} do {
-		
 		if ((count STORAGE_ARRAY) > 0) then {
-		
 			for "_i" from 0 to (count STORAGE_ARRAY) - 1 do {
 		
 				_vehicle = STORAGE_ARRAY select _i;

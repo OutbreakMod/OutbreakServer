@@ -12,6 +12,12 @@ _array = (_unit getVariable ["playerSaveData", []]);
 if (count _array > 0) then {
 	_array call server_clientSave;
 };
+
+_craftedVehicle = _unit getVariable ["CraftedVehicle", objNull];
+
+if (_craftedVehicle != objNull) then {
+    deleteVehicle (_craftedVehicle);
+};
 	
 _attackingZombies = _unit getVariable ["attackingZombies", []];
 { 

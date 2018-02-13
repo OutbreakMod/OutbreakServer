@@ -28,14 +28,14 @@ if (_itemType == "gun") then {
 	
 	if ((random 1) < 0.50) then {
 		_amount = _amount + 1;
-		
-		if ((random 1) < 0.20) then {
-			_amount = _amount + 1;
-			
-			if ((random 1) < 0.15) then {
-				_amount = _amount + 1;
-			};
-		};
+	};
+    
+	if ((random 1) < 0.25) then {
+		_amount = _amount + 1;
+	};
+    
+	if ((random 1) < 0.25) then {
+		_amount = _amount + 1;
 	};
 	
 	
@@ -48,19 +48,16 @@ if (_itemType == "gun") then {
 };
 
 if (_itemType == "supplybox") then {
-
 	_weaponHolder = createVehicle [_itemClass, _lootPos, [], 0, "CAN_COLLIDE"];
 	_weaponHolder setVariable ["isLoot", true];
 };
 
 if (_itemType == "backpack") then {
-
 	_weaponHolder setVariable ["isLoot", true];
 	_weaponHolder addBackpackCargoGlobal [_itemClass, 1];
 };
 
 if (_itemType == "single") then {
-
 	_weaponHolder setVariable ["isLoot", true];
 	_weaponHolder addItemCargoGlobal [_itemClass, 1];
 };
@@ -77,25 +74,24 @@ if (_itemType == "magazine") then {
 	
 	if ((random 1) < 0.50) then {
 		_amount = _amount + 1;
-		
-		if ((random 1) < 0.20) then {
-			_amount = _amount + 1;
-			
-			if ((random 1) < 0.15) then {
-				_amount = _amount + 1;
-			};
-		};
+	};
+    
+	if ((random 1) < 0.25) then {
+		_amount = _amount + 1;
+	};
+    
+	if ((random 1) < 0.25) then {
+		_amount = _amount + 1;
 	};
 	
 	_weaponHolder addMagazineCargoGlobal [_itemClass, _amount];
 };
 
 if (_itemType == "item") then {
-
 	_weaponHolder setVariable ["isLoot", true];
 	_weaponHolder addItemCargoGlobal [_itemClass, 1];
 	
-	_current = 1;
+	/*_current = 1;
 	
 	_maxItems = _current + floor (random 2); // number giving possibily of more items into this holder. max = three, min = 1
 	_objItems = _buildingClass call building_items;
@@ -126,7 +122,7 @@ if (_itemType == "item") then {
 				_current = _current + 1;
 			};
 		};
-	};
+	};*/
 };
 
 // random rotation

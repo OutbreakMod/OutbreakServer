@@ -66,11 +66,9 @@ _usedPos = [];
 _lootArray = [];
 
 if (_posAmount > 0) then {
-	
 	_buildingLoot = _className call building_items;
 
 	if (count (_buildingLoot) > 0) then {
-		
 		while {count(_this getVariable ["lootarray", []]) < _lootNumber} do {
 		
 			for "_i" from 0 to count (_buildingLoot) - 1 do {
