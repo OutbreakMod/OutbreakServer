@@ -14,7 +14,9 @@ _wrecks = [
 	"datsun01Wreck",
 	"hiluxWreck",
 	"datsun02Wreck",
-	"UAZWreck"
+	"UAZWreck",
+    "Hedgehog",
+    "Fort_Barricade"
 ];
 
 {
@@ -37,8 +39,11 @@ _wrecks = [
 			if (!isNil '_roadPos') then {
 				_wreck = (_wrecks call BIS_fnc_selectRandom);
 				_veh = createVehicle [_wreck, _roadPos, [], 0, "CAN_COLLIDE"];
-				_veh enableSimulation false;
 				_veh setDir round(random 360);
+                
+                _newPos = _veh modelToWorld [0,0,0];
+                _veh setPos _newPos;
+                _veh enableSimulation false;
 			};
 		};
 	};

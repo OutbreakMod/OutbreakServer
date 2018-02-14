@@ -137,6 +137,7 @@ _scheduler = [
 
 diag_log "Running cleanup thread";
 [] execVM "addons\outbreak_server\scheduler\cleanup_array.sqf";
+[] execVM "addons\outbreak_server\functions\server_spawnCityWrecks.sqf";
 
 //diag_log "SERVER: Running clean up thread";
 //[] execVM "addons\outbreak_server\scheduler\cleanup.sqf";

@@ -26,7 +26,6 @@ _needsrelocated = true;
 _position = [];
 
 while {_needsrelocated} do {
-	
 	_position = [getMarkerPos "center", 0, 7000, 10, 0, 2000,0] call BIS_fnc_findSafePos;
 	_istoomany = _position nearObjects ["AllVehicles", 5];
 	
