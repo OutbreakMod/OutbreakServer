@@ -42,6 +42,8 @@ _wrecks = [
 				_veh setDir round(random 360);
                 
                 _newPos = _veh modelToWorld [0,0,0];
+                _newPos set [2, 0];
+                
                 _veh setPos _newPos;
                 _veh enableSimulation false;
 			};

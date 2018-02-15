@@ -21,5 +21,5 @@ if (isClass(configFile >> "CfgBuildingType" >> _class)) then {
     _lootItems = _lootItems + getArray(configFile >> "CfgLootCategories" >> _x >> "loot"); 
 } count _lootCategories;
 
-_lootItems = (_lootItems call KK_fnc_arrayShuffle);
+_lootItems = (_lootItems call fnc_arrayShuffle);
 _lootItems
