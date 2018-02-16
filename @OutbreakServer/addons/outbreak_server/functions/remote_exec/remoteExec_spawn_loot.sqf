@@ -25,7 +25,6 @@ if (serverTime > _building getVariable ["loottimer", 0]) then {
 			_building setVariable ["helicrashSpawnZeds", false, true];
 		};
 	} else {
-		
 		if (_building getVariable ["lootRespawn", true]) then {
 			for "_i" from 0 to count (_lootArray) - 1 do {
 				deleteVehicle (_lootArray select _i);

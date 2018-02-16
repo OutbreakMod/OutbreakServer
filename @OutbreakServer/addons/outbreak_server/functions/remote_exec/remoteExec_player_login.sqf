@@ -11,7 +11,6 @@ _uuid = getPlayerUID _player;
 _exists = ["users", "uuid", _uuid] call hive_exists;
 
 if (_exists) then {
-
 	_data = _player call hive_get_user;
 	
 	waitUntil {!isNil "_data"};
@@ -32,7 +31,6 @@ if (_exists) then {
 	};
 
 } else {
-	
 	_player call hive_new_user;
 	
 	[_player] remoteExecCall ["remoteExec_find_spawn", _playerID];
