@@ -43,7 +43,11 @@ class CfgLootCategories {
 			{"tent","single",0.1}, // 10% 
 			{"Mod_FNFAL","gun",0.06},
 			{"CUP_arifle_M16A2","gun",0.07},
-			{"Mod_DMR","gun",0.02}
+			{"Mod_DMR","gun",0.02},
+            {"CUP_l85a2","gun",0.07},
+            {"CUP_lmg_M60E4","gun",0.03},
+            {"CUP_lmg_M240","gun",0.03},
+            {"CUP_lmg_M249","gun",0.03}
 		};
 	};
 	
@@ -78,7 +82,8 @@ class CfgLootCategories {
 			{"MOD_AK74","gun",0.07},
 			{"MOD_AKM","gun",0.03},
 			{"CUP_arifle_CZ805_A2","gun",0.03},
-			{"MOD_Sa58P","gun",0.03}
+			{"MOD_Sa58P","gun",0.03},
+            {"CUP_sgun_AA12","gun",0.04}
 		};
 	};
 	
@@ -87,14 +92,6 @@ class CfgLootCategories {
 			{"CUP_smg_MP5A5","gun",0.03},
 			{"CUP_smg_bizon","gun",0.05}
 			
-		};
-	};
-	
-	class HelicopterMachineGuns {
-		loot[] = {
-			{"hgun_PDW2000_Holo_F","gun",0.06},
-			{"CUP_lmg_PKM","gun",0.03},
-            {"CUP_hgun_MicroUzi","gun",0.03}
 		};
 	};
 	
@@ -242,7 +239,8 @@ class CfgLootCategories {
 			{"20Rnd_762x51_DMR", "magazine",0.03},
 			{"CUP_10Rnd_762x54_SVD_M","magazine",0.03},
 			{"CUP_5Rnd_762x67_G22","magazine",0.03},
-            {"11Rnd_45ACP_Mag", "magazine",0.04}
+            {"11Rnd_45ACP_Mag", "magazine",0.04},
+            {"CUP_30Rnd_556x45_Stanag","magazine",0.02}
 			
 		};
 	};
