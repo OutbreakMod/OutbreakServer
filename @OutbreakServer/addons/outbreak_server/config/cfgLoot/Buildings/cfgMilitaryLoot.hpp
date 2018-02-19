@@ -4,12 +4,12 @@ class Land_SS_hangar : Default {
 	lootCategories[] = 
 	{
 		"MilitaryTools", 
-		"AssaultRifles", 
 		"MilitaryPistols",
-		"Medical", 
-		"Magazines", 
+        "MilitarySpecial",
 		"SubmachineGuns", 
-		"Attachments"
+		"Medical", 
+		"Magazines",
+        "Industrial"
 	};
 	positions[] = {{-13.0562,-17.6318,-5.87253},{-12.9907,20.873,-5.87253},{12.7217,22.6377,-5.87253},{1.80469,3.94238,-5.87253},{13.1997,-18.3457,-5.87253}};
 	lootRespawnSeconds = 600;
@@ -24,7 +24,6 @@ class Land_Mil_Barracks_i : Default {
 		"MilitaryPistols",
 		"Medical", 
 		"Magazines", 
-		"SubmachineGuns", 
 		"Attachments"
 	};
 	positions[] = {{4.56494,-2.67383,-1.14822},{0.312988,1.54492,-1.09824},{-2.95361,1.49414,-1.11823},{-3.39111,-1.99023,-0.708221},{-6.68604,-1,0.0917664},{-8.94238,-2.52441,-1.09824},{-0.59668,-1.49609,-1.10825},{3.03467,-1.00586,0.0917664},{-0.214355,-2.19531,0.0917664},{-8.93018,1.53906,-1.09824}};
@@ -54,10 +53,10 @@ class CampEast_EP1 : Default {
 	{
 		"MilitaryTools", 
 		"AssaultRifles", 
+		"SubmachineGuns", 
 		"MilitaryPistols", 
 		"Medical", 
 		"Magazines", 
-		"SubmachineGuns", 
 		"Attachments"
 	};
 	positions[] = {{-0.670898,0.95459,-1.31049},{1.68506,-2.43384,-1.31049},{-1.76318,-1.62646,-1.31049}};
@@ -71,11 +70,12 @@ class CampEast : Default {
 	{
 		"MilitaryTools", 
 		"AssaultRifles", 
+        "SubmachineGuns",
 		"MilitaryPistols",
 		"Medical", 
 		"Magazines", 
-		"SubmachineGuns", 
 		"Attachments"
+        
 	};
 	positions[] = {{-0.670898,0.95459,-1.31049},{1.68506,-2.43384,-1.31049},{-1.76318,-1.62646,-1.31049}};
 	lootRespawnSeconds = 600;
@@ -87,11 +87,11 @@ class Land_tent_east : Default {
 	lootCategories[] = 
 	{
 		"MilitaryTools", 
-		"AssaultRifles", 
+		"AssaultRifles",
+        "SubmachineGuns",
 		"MilitaryPistols",
 		"Medical", 
 		"Magazines", 
-		"SubmachineGuns", 
 		"Attachments"
 	};
 	positions[] = {{-0.670898,0.95459,-1.71049},{1.68506,-2.43384,-1.71049},{-1.76318,-1.62646,-1.71049}};
@@ -103,7 +103,7 @@ class Land_Mil_Guardhouse: Default {
 	lootMin = 0;
 	lootCategories[] = 
 	{
-		"AssaultRifles", 
+		"SubmachineGuns",
 		"MilitaryPistols",
 		"Magazines", 
 		"Attachments"

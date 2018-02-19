@@ -1,7 +1,6 @@
 class CfgLootCategories {
 	
 	class GeneralTools {
-		
 		loot[] = {
 			{"ItemMap","single",0.05},
 			{"ItemWatch","single",0.03},
@@ -10,7 +9,6 @@ class CfgLootCategories {
 	};
 	
 	class MilitaryTools {
-		
 		loot[] = {
 			{"ItemGPS","item",0.05},
 			{"mre","item",0.06},
@@ -19,7 +17,6 @@ class CfgLootCategories {
 	};
 	
 	class MilitarySpecial {
-		
 		loot[] = {
 			{"NVGoggles","single",0.01},
 			{"Rangefinder","single",0.02}
@@ -28,17 +25,13 @@ class CfgLootCategories {
 	
 		
 	class MilitaryPistols {
-		
 		loot[] = {
 			{"hgun_Pistol_heavy_01_F","gun",0.06},
-			{"CUP_hgun_M9","gun",0.09},
-			{"CUP_hgun_M9_snds","gun",0.06},
-			{"muzzle_snds_L","item",0.01}
+			{"CUP_hgun_M9","gun",0.09}
 		};
 	};
 
 	class CookingUtilities {
-		
 		loot[] = {
 			{"matches","item",0.08},
 			{"knife","item",0.06}
@@ -46,10 +39,8 @@ class CfgLootCategories {
 	};
 	
 	class USHelicrash {
-		
 		loot[] = {
 			{"tent","single",0.1}, // 10% 
-			{"CUP_arifle_G36A_camo","gun",0.07},
 			{"Mod_FNFAL","gun",0.06},
 			{"CUP_arifle_M16A2","gun",0.07},
 			{"Mod_DMR","gun",0.02}
@@ -57,7 +48,6 @@ class CfgLootCategories {
 	};
 	
 	class RUHelicrash {
-		
 		loot[] = {
 			{"CUP_arifle_RPK74","gun",0.08},
 			{"CUP_lmg_PKM","gun",0.07},
@@ -66,13 +56,14 @@ class CfgLootCategories {
 	};
 	
 	class Attachments {
-		
 		loot[] = {
 			{"CUP_optic_Kobra", "item",0.01},
 			{"CUP_optic_PSO_1", "item",0.01},
 			{"CUP_optic_GOSHAWK", "item",0.01},
 			{"CUP_optic_NSPU","item",0.01},
-			{"CUP_muzzle_PBS4","item",0.01},
+			{"muzzle_snds_acp","item",0.01}, // arma 3 45acp pistol
+            {"muzzle_snds_L","item",0.01},// g17 pistol
+            {"CUP_muzzle_snds_M9","item",0.01},// m9 pistol
 			{"optic_Holosight","item",0.01},
 			{"optic_Aco","item",0.01},
 			{"optic_MRCO","item",0.01},
@@ -81,64 +72,54 @@ class CfgLootCategories {
 	};
 
 	class AssaultRifles {
-		
 		loot[] = {
 			{"MOD_AK74M","gun",0.03},
 			{"MOD_AKS74U","gun",0.05},
 			{"MOD_AK74","gun",0.07},
 			{"MOD_AKM","gun",0.03},
-			{"CUP_arifle_CZ805_A2","gun",0.01},
+			{"CUP_arifle_CZ805_A2","gun",0.03},
 			{"MOD_Sa58P","gun",0.03}
 		};
 	};
 	
 	class SubmachineGuns {
-		
 		loot[] = {
-			{"CUP_hgun_MicroUzi","gun",0.03},
-			{"CUP_hgun_MicroUzi_snds","gun",0.01},
-			{"CUP_smg_MP5A5","gun",0.02},
-			{"CUP_smg_MP5SD6","gun",0.01},
+			{"CUP_smg_MP5A5","gun",0.03},
 			{"CUP_smg_bizon","gun",0.05}
 			
 		};
 	};
 	
-	class LightMachineGuns {
-		
+	class HelicopterMachineGuns {
 		loot[] = {
 			{"hgun_PDW2000_Holo_F","gun",0.06},
-			{"CUP_lmg_PKM","gun",0.03}
-			
+			{"CUP_lmg_PKM","gun",0.03},
+            {"CUP_hgun_MicroUzi","gun",0.03}
 		};
 	};
 	
 	class SniperRifles {
-		
 		loot[] = {
-			{"CUP_srifle_SVD_pso","gun",0.02},
-			{"CUP_srifle_ksvk_PSO3","gun",0.01},
+			{"CUP_srifle_SVD_pso","gun",0.05},
+			{"CUP_srifle_ksvk_PSO3","gun",0.03},
 		};
 	};
 	
 	class HighCaliberRifles {
-		
 		loot[] = {
 			{"CUP_srifle_AS50_SBPMII","gun",0.01},
 			{"CUP_srifle_G22_des_SBPMII","gun",0.05},
-			{"CUP_srifle_M107_LeupoldVX3","gun",0.01}
+			{"CUP_srifle_M107_LeupoldVX3","gun",0.02}
 		};
 	};
 	
 	class MedicalGeneral {
-		
 		loot[] = {
 			{"MOD_MedicalBox","supplybox",0.04}
 		};
 	};
 	
 	class Medical {
-		
 		loot[] = {
 			{"bandage", "item",0.08},
 			{"ibuprofen", "item",0.06},
@@ -149,7 +130,6 @@ class CfgLootCategories {
 	};
 	
 	class MiscMedical {
-		
 		loot[] = {
 			{"bandage", "item",0.08},
 			{"ibuprofen", "item",0.06},
@@ -158,7 +138,6 @@ class CfgLootCategories {
 	};
 	
 	class Supermarket {
-		
 		loot[] = {
 			//{"twinkies", "item",0.02},
 			//{"snoballs", "item",0.02},
@@ -174,7 +153,6 @@ class CfgLootCategories {
 	};
 	
 	class CivillianFoodStorage {
-		
 		loot[] = {
 			{"energy_drink", "item",0.03},
 			{"corn", "item",0.02},
@@ -188,7 +166,6 @@ class CfgLootCategories {
 	};
 	
 	class CivillianClothes {
-		
 		loot[] = {
 			{"U_C_Poloshirt_blue", "item",0.04},
 			{"U_C_Poloshirt_burgundy", "item",0.04},
@@ -202,16 +179,14 @@ class CfgLootCategories {
 	};
 
 	class Hunting {
-		
 		loot[] = {
-			{"CUP_srifle_CZ750_SOS_bipod","gun",0.01},
-			{"CUP_srifle_CZ550", "gun",0.04},
-			{"CUP_srifle_LeeEnfield", "gun",0.05}
+			{"CUP_srifle_CZ750_SOS_bipod","gun",0.04},
+			{"CUP_srifle_CZ550", "gun",0.05},
+			{"CUP_srifle_LeeEnfield", "gun",0.06}
 		};
 	};
 	
 	class Farm {
-		
 		loot[] = {
 			{"CUP_srifle_CZ550", "gun",0.03},
 			{"CUP_sgun_Saiga12K","gun",0.04},
@@ -224,7 +199,6 @@ class CfgLootCategories {
 
 
 	class CivillianBackpacks {
-		
 		loot[] = {
 			{"B_OutdoorPack_blk", "backpack",0.02},
 			{"B_OutdoorPack_tan", "backpack",0.02},
@@ -237,7 +211,6 @@ class CfgLootCategories {
 	};
 	
 	class Industrial {
-		
 		loot[] = {
 			{"axe","single", 0.09},
 			{"jerrycan","single", 0.08},
@@ -249,7 +222,6 @@ class CfgLootCategories {
 	};
 
 	class Firestation {
-		
 		loot[] = {
 			{"fireaxe","single", 0.08},
 			{"axe","single", 0.06},
@@ -261,7 +233,6 @@ class CfgLootCategories {
 	};
 	
 	class Magazines {
-		
 		loot[] = {
 			{"CUP_30Rnd_556x45_Stanag", "magazine",0.02},
 			{"20Rnd_762x51_FNFAL_M", "magazine",0.04},
@@ -270,28 +241,29 @@ class CfgLootCategories {
 			{"MOD_30Rnd_545x39", "magazine",0.06},
 			{"20Rnd_762x51_DMR", "magazine",0.03},
 			{"CUP_10Rnd_762x54_SVD_M","magazine",0.03},
-			{"CUP_5Rnd_762x67_G22","magazine",0.03}
+			{"CUP_5Rnd_762x67_G22","magazine",0.03},
+            {"11Rnd_45ACP_Mag", "magazine",0.04}
 			
 		};
 	};
 	
 	class CivillianPistols {
-		
 		loot[] = {
-			{"Mod_1911","gun",0.03},
-			{"Mod_Revolver", "gun",0.04},
-			{"CUP_hgun_Makarov", "gun",0.06}
+			{"Mod_1911", "gun", 0.03},
+			{"Mod_Revolver", "gun", 0.04},
+            {"CUP_hgun_Glock17", "gun", 0.04},
+			{"CUP_hgun_Makarov", "gun", 0.06}
 		};
 	};
 
 
 	class CivillianMagazines {
-		
 		loot[] = {
-			{"6Rnd_45ACP_M","magazine",0.04},
-			{"7Rnd_45ACP_M","magazine",0.04},
-			{"CUP_8Rnd_9x18_Makarov_M","magazine",0.05},
-			{"CUP_5x_22_LR_17_HMR_M","magazine",0.02}
+			{"6Rnd_45ACP_M", "magazine", 0.04},
+            {"CUP_17Rnd_9x19_glock17", "magazine", 0.04},
+			{"7Rnd_45ACP_M", "magazine", 0.04},
+			{"CUP_8Rnd_9x18_Makarov_M", "magazine", 0.05},
+			{"CUP_5x_22_LR_17_HMR_M", "magazine", 0.02}
 		};
 	};
 };
