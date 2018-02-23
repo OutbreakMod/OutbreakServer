@@ -83,6 +83,7 @@ WeaponMenu3 =
         ["M60E4", [3],  "", -5, [["expression", format[_EXECscript3,"M60E4.sqf"]]], "1", "1"],
         ["AA12", [4],  "", -5, [["expression", format[_EXECscript3,"AA12.sqf"]]], "1", "1"],
         ["CZ750", [4],  "", -5, [["expression", format[_EXECscript3,"CZ750.sqf"]]], "1", "1"],
+        ["Saiga12K", [4],  "", -5, [["expression", format[_EXECscript3,"Saiga12K.sqf"]]], "1", "1"],
 		["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 		
 ];
