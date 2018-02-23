@@ -69,6 +69,20 @@ WeaponMenu2 =
 		["AS50", [3],  "", -5, [["expression", format[_EXECscript3,"AS50.sqf"]]], "1", "1"],
 		["M107", [4],  "", -5, [["expression", format[_EXECscript3,"M107.sqf"]]], "1", "1"],
 		["G22", [6],  "", -5, [["expression", format[_EXECscript3,"G22.sqf"]]], "1", "1"],
+        ["PKM", [6],  "", -5, [["expression", format[_EXECscript3,"PKM.sqf"]]], "1", "1"],
+        ["Sa58P", [6],  "", -5, [["expression", format[_EXECscript3,"Sa58P.sqf"]]], "1", "1"],
+        ["Next page", [12], "#USER:WeaponMenu3", -5, [["expression", ""]], "1", "1"],
+		["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
+		
+];
+WeaponMenu3 = 
+[
+	["Weapons 2",true],
+	//Add Weapons Here Gave another page because it could get a little confusing :P
+		["KSVK", [2],  "", -5, [["expression", format[_EXECscript3,"KSVK.sqf"]]], "1", "1"],
+        ["M60E4", [3],  "", -5, [["expression", format[_EXECscript3,"M60E4.sqf"]]], "1", "1"],
+        ["AA12", [4],  "", -5, [["expression", format[_EXECscript3,"AA12.sqf"]]], "1", "1"],
+        ["CZ750", [4],  "", -5, [["expression", format[_EXECscript3,"CZ750.sqf"]]], "1", "1"],
 		["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 		
 ];
